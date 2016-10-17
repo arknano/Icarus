@@ -3,16 +3,8 @@ using System.Collections;
 
 public class Updraft : MonoBehaviour {
 
-    public enum DIRECTION
-    {
-        FROM_ABOVE,
-        FROM_BELOW,
-        FROM_LEFT,
-        FROM_RIGHT
-    };
-
-    [Tooltip("The direction the wind comes from.")]
-    public DIRECTION direction;
+    public string PlayerTag = "Player";
+    public float force = 5;
 
     private Rigidbody rb;
 
@@ -26,10 +18,17 @@ public class Updraft : MonoBehaviour {
     {  
 	}
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Yellow Orb")
+        Debug.Log("Collided");
+        if (col.gameObject.tag == PlayerTag)
         {
+            Debug.Log("Registered");
+            rb = col.gameObject.GetComponent<Rigidbody>();
+
+            Vector3 dir = col.contacts[0].point - col.gameObject.transform.position;
+            dir = -dir.normalized;
+            rb.AddForce(dir * force);  
         }
     }
 }
