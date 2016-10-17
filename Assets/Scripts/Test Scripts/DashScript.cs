@@ -9,9 +9,18 @@ public class DashScript : MonoBehaviour
 	private float dashRemains = 0;
 	private float dashDirection = 0;
 
-	private Vector3 destination, currentPosition;
+    Rigidbody rb;
+
 	// Use this for initialization
-	void Start () 	{ }
+	void Start ()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+	void Update()
+	{
+		
+	}
 
 	void FixedUpdate ()
 	{
@@ -24,6 +33,7 @@ public class DashScript : MonoBehaviour
 				dashDirection = 0;
 				if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
 				{	
+					Debug.Log("woooooorkiiiiing!");
 					// Set it to left	
 					dashDirection = -1;
 				}
@@ -42,7 +52,8 @@ public class DashScript : MonoBehaviour
 			else
 			{
 				float lerpSpeed = 1 - (1-dashRemains);
-				transform.position += (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed));
+				transform.position += transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed);
+                //rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
 				dashRemains -= Time.fixedDeltaTime;
 			}
 		}

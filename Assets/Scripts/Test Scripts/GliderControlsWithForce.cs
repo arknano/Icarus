@@ -10,7 +10,7 @@ public class GliderControlsWithForce : MonoBehaviour
     [Tooltip("The speed at which the glider realigns itself.")]
     public float smooth = 1.0f;
     [Tooltip("The speed at which the glider rotates.")]
-    public float tiltAngle = 45.0f;
+	public float turningSensitivity = 45.0f;
     [Tooltip("Angle the glider readjusts to when controls are released.")]
     public float readjustAngle = 10;
     [Tooltip("The speed the glider readjusts when controls are released.")]
@@ -58,18 +58,18 @@ public class GliderControlsWithForce : MonoBehaviour
     {
         InputDevice device = InputManager.ActiveDevice;
 
-        float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
-        float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
+		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
+		float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
-        angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth);
-        angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate);
+		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
+		angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
 
-        angles.x = Mathf.Clamp(angles.x + vertical * tiltAngle * Time.deltaTime, -60, 90);
-        angles.y = angles.y + horizontal * tiltAngle * Time.deltaTime;
-        angles.z = Mathf.Clamp(angles.z + horizontal * -tiltAngle * Time.deltaTime, -90, 90);
-        transform.eulerAngles = angles;
+		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
+		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
+		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
+		transform.eulerAngles = angles;
 
-        rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate()));
+		rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
     }
 
     float Accelerate()
