@@ -26,12 +26,12 @@ public class Updraft : MonoBehaviour
         Debug.Log("Collided");
         if (col.gameObject.tag == PlayerTag)
         {
-            Debug.Log("Registered");
+            /*Debug.Log("Registered");
             rb = col.gameObject.GetComponent<Rigidbody>();
 
             Vector3 dir = col.transform.position - col.gameObject.transform.position;
             dir = -dir.normalized;
-            rb.AddRelativeForce(dir * force);
+            rb.AddRelativeForce(dir * force);*/
         }
     }
 }
