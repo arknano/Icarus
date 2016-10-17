@@ -51,9 +51,11 @@ public class DashScript : MonoBehaviour
 			else
 			{
 				float lerpSpeed = 1 - (1-dashRemains);
-				Debug.Log("hi");
+				//Debug.Log("hi");
+				Vector3 force = transform.right * dashDirection * Time.fixedDeltaTime;
 				//transform.position += transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed);
-                rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
+				rb.AddForce(5, 0, 0, ForceMode.Impulse);
+                //rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
 				dashRemains -= Time.fixedDeltaTime;
 			}
 		}
