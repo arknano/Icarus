@@ -30,24 +30,17 @@ public class GlideController : MonoBehaviour
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
 
+    private Rigidbody rb;
+
     private int score = 0;
     public Text scoreText;
 
     public LayerMask terrainLayer;
 
-    public bool IsFalling
-    {
-        get { return isFalling; }
-    }
-
-
-    //private Vector3 velocity = new Vector3(0,0,30);
-    bool lvlcomplete, isFalling = false;
-
     // Use this for initialization
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -66,15 +59,7 @@ public class GlideController : MonoBehaviour
         angles.z = Mathf.Clamp(angles.z + horizontal * -tiltAngle * Time.deltaTime, -90, 90);
         transform.eulerAngles = angles;
 
-        if (acceleration > minVelocity)
-        {
-            transform.position += transform.forward * Time.deltaTime * Accelerate();
-        }
-        else
-        {
-            Vector3 gravity = new Vector3(transform.position.x, (transform.position.y + Time.deltaTime * Accelerate()), transform.position.z);
-            transform.position = gravity;
-        }
+        rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate()));
     }
 
     float Accelerate()

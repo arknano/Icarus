@@ -9,9 +9,13 @@ public class DashScript : MonoBehaviour
 	private float dashRemains = 0;
 	private float dashDirection = 0;
 
-	private Vector3 destination, currentPosition;
+    Rigidbody rb;
+
 	// Use this for initialization
-	void Start () 	{ }
+	void Start ()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
 	void FixedUpdate ()
 	{
@@ -42,7 +46,7 @@ public class DashScript : MonoBehaviour
 			else
 			{
 				float lerpSpeed = 1 - (1-dashRemains);
-				transform.position += (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed));
+                rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
 				dashRemains -= Time.fixedDeltaTime;
 			}
 		}
