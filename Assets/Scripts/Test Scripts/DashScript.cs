@@ -32,8 +32,7 @@ public class DashScript : MonoBehaviour
 			{
 				dashDirection = 0;
 				if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
-				{	
-					Debug.Log("woooooorkiiiiing!");
+				{						
 					// Set it to left	
 					dashDirection = -1;
 				}
@@ -52,7 +51,10 @@ public class DashScript : MonoBehaviour
 			else
 			{
 				float lerpSpeed = 1 - (1-dashRemains);
-				transform.position += transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed);
+				//Debug.Log("hi");
+				Vector3 force = transform.right * dashDirection * Time.fixedDeltaTime;
+				//transform.position += transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed);
+				rb.AddForce(5, 0, 0, ForceMode.Impulse);
                 //rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
 				dashRemains -= Time.fixedDeltaTime;
 			}

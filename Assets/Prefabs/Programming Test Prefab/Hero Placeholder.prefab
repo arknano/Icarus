@@ -77,7 +77,7 @@ GameObject:
   - 23: {fileID: 23000010328319658}
   - 54: {fileID: 54000011706108564}
   - 114: {fileID: 114000012686074106}
-  - 114: {fileID: 114000012102255420}
+  - 114: {fileID: 114000010258064630}
   m_Layer: 0
   m_Name: Glider
   m_TagString: Untagged
@@ -187,7 +187,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d87524d563598e046914320d710c683a, type: 2}
+  - {fileID: 2100000, guid: e21af2eff931f214fb3f4c5c66d2a30a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -299,7 +299,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012722112294}
   m_Enabled: 1
---- !u!114 &114000012102255420
+--- !u!114 &114000010258064630
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artificialGravity: 1
   smooth: 1
-  tiltAngle: 45
+  turningSensitivity: 45
   readjustAngle: 10
   readjustRate: 0.4
   acceleration: 30
