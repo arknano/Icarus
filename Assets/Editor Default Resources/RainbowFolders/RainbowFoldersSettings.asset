@@ -68,3 +68,7 @@ MonoBehaviour:
     Type: 1
     SmallIcon: {fileID: 2800000, guid: 8f45cff1df9688244b1fa6e2da91e05f, type: 3}
     LargeIcon: {fileID: 2800000, guid: 15c3471930a7ff44aa9a30bc21a5ea06, type: 3}
+  - Key: Assets/Models
+    Type: 1
+    SmallIcon: {fileID: 2800000, guid: f14480b09218f3047a15b5ded872de28, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 38dec0c9e1ada504d98f8a0f4959a215, type: 3}
