@@ -48,9 +48,6 @@ public class TestGlideController2 : MonoBehaviour
 
 		if (device != null) 
 		{
-			float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
-			float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
-
 			angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
 			angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
 
