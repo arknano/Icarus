@@ -5,14 +5,17 @@ using InControl;
 public class DashScript : MonoBehaviour 
 {		
 	[Tooltip("How quickly the glider dashes - faster dash = longer dash.")]
-	public float speed = 5.0f;
-	public float dashCooldown = 5.0f;
+	public float dashSpeed = 6.0f;
+	[Tooltip("How long you have to wait between dashes.")]
+	public float dashCooldown = 70.0f;
 
-	public float dashLeft = 0;
+	private float dashLeft = 0;
 	private float currentSpeed = 0;
 	private float dashRemains = 0;
 	private float dashDirection = 0;
 	private bool keyDown = false;
+
+	//public int counter = 0;
 
     Rigidbody rb;
 
@@ -36,14 +39,14 @@ public class DashScript : MonoBehaviour
 			if (currentSpeed <= 0)
 			{	
 				DashCoolDown();
-				if (keyDown == false)
+				if (keyDown == false && dashLeft <= 0)
 				{
 					dashDirection = 0;
 					if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
 					{						
 						// Set it to left
 						dashDirection = -1;
-						currentSpeed = speed;
+						currentSpeed = dashSpeed;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
@@ -51,7 +54,7 @@ public class DashScript : MonoBehaviour
 					{	
 						// Set it to right
 						dashDirection = 1;
-						currentSpeed = speed;
+						currentSpeed = dashSpeed;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
@@ -69,7 +72,7 @@ public class DashScript : MonoBehaviour
 	{
 		if(dashLeft > 0)
 		{
-			Debug.Log(dashLeft);
+			//Debug.Log(dashLeft);
 			dashLeft -= 1;
 		}
 	}
