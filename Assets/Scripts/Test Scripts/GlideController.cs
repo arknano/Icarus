@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using InControl;
+using UnityEngine.SceneManagement;
 
 public class GlideController : MonoBehaviour
 {
@@ -105,6 +106,11 @@ public class GlideController : MonoBehaviour
             Destroy(col.gameObject);
             AddScore(1);
         }
+
+//		if (col.gameObject.tag == "Ground")
+//		{
+//			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+//		}
     }
 
     void AddScore(int s)
