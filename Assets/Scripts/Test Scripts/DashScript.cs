@@ -6,10 +6,13 @@ public class DashScript : MonoBehaviour
 {		
 	[Tooltip("How quickly the glider dashes - faster dash = longer dash.")]
 	public float speed = 5.0f;
+	public float dashCooldown = 5.0f;
+
+	public float dashLeft = 0;
 	private float currentSpeed = 0;
-	public float speedFraction = 4;
 	private float dashRemains = 0;
 	private float dashDirection = 0;
+	private bool keyDown = false;
 
     Rigidbody rb;
 
@@ -19,49 +22,55 @@ public class DashScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-	void Update()
-	{
-		
-	}
-
 	void FixedUpdate ()
 	{
 		InputDevice device = InputManager.ActiveDevice;
 
 		if (device != null) 
 		{		
-			if (dashRemains <= 0)
+			if((Input.GetKeyUp("q") || !(device.LeftBumper.IsPressed)) && (Input.GetKeyUp("3") || !(device.RightBumper.IsPressed)))
 			{
-				dashDirection = 0;
-				if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
-				{						
-					// Set it to left	
-					dashDirection = -1;
-					currentSpeed = speed;
-				}
-				if((Input.GetKeyDown("e")|| device.RightBumper.IsPressed))
-				{	
-					// Set it to right
-					dashDirection = 1;
-					currentSpeed = speed;
+				keyDown = false;
+			}
+
+			if (currentSpeed <= 0)
+			{	
+				DashCoolDown();
+				if (keyDown == false)
+				{
+					dashDirection = 0;
+					if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
+					{						
+						// Set it to left
+						dashDirection = -1;
+						currentSpeed = speed;
+						dashLeft = dashCooldown;
+						keyDown = true;
+					}
+					if((Input.GetKeyDown("e")|| device.RightBumper.IsPressed))
+					{	
+						// Set it to right
+						dashDirection = 1;
+						currentSpeed = speed;
+						dashLeft = dashCooldown;
+						keyDown = true;
+					}
 				}
 
-				if (dashDirection != 0)
-				{
-					// Duration of the dash
-					dashRemains = 1;
-				}
 			}
 			else
 			{
-				float lerpSpeed = 1 - (1-dashRemains);
-				//Debug.Log("hi");
-				//Vector3 force = transform.right * dashDirection * Time.fixedDeltaTime;
-				//transform.position += transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed);
-				rb.AddForce(DashSpeed() * (dashDirection * transform.right), ForceMode.Impulse);
-                //rb.MovePosition(transform.position + (transform.right * dashDirection * dashDistance * Time.fixedDeltaTime * (lerpSpeed * lerpSpeed)));
-				dashRemains -= Time.fixedDeltaTime;
+				rb.AddForce(DashSpeed() * (dashDirection * transform.right), ForceMode.Impulse);               
 			}
+		}
+	}
+
+	void DashCoolDown()
+	{
+		if(dashLeft > 0)
+		{
+			Debug.Log(dashLeft);
+			dashLeft -= 1;
 		}
 	}
 
@@ -71,8 +80,8 @@ public class DashScript : MonoBehaviour
 		{
 			currentSpeed -= 0.5f;
 		}
-		else if (speed < 0)
-		{
+		else if (currentSpeed <= 0)
+		{			
 			currentSpeed = 0;
 		}
 		return currentSpeed;
