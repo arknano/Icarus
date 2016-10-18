@@ -319,7 +319,7 @@ MonoBehaviour:
   maxVelocity: 100
   upDeccelerate: 65
   downAccelerate: 50
-  yelOrb: {fileID: 0}
+  yelOrb: {fileID: 4000013624029408, guid: 58ee5881d9325c045820ef729d1be298, type: 2}
   scoreText: {fileID: 0}
   terrainLayer:
     serializedVersion: 2
@@ -351,7 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53069b0bca259a44eb3dea9b15885684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 100
+  speed: 5
+  speedFraction: 4
 --- !u!124 &124000010672511912
 Behaviour:
   m_ObjectHideFlags: 1
