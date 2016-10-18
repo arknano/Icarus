@@ -45,16 +45,20 @@ public class TestGlideController2 : MonoBehaviour
 
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
 		float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
+		//float turn = horizontal + vertical; 
 
 		if (device != null) 
 		{
-			angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
-			angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+//			angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
+//			angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+//
+//			angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
+//			angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
+//			angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
+//			transform.eulerAngles = angles;
 
-			angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
-			angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
-			angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
-			transform.eulerAngles = angles;
+			//rb.AddTorque(transform.up * horizontal);
+			rb.AddTorque(transform.right * horizontal);
 
 			rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
 		}

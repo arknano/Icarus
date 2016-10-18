@@ -51,24 +51,6 @@ public class GlideController : MonoBehaviour
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
-//		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth);
-//		angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate);
-//
-//		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90);
-//		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime;
-//		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90);
-//		transform.eulerAngles = angles;
-//
-//		if (acceleration > minVelocity)
-//		{
-//			transform.position += transform.forward * Time.deltaTime * Accelerate(); //* velocity;
-//		}
-//		else
-//		{
-//			Vector3 gravity = new Vector3(transform.position.x, (transform.position.y + Time.deltaTime * Accelerate()), transform.position.z);
-//			transform.position = gravity;
-//		}
-
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
         angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
 
