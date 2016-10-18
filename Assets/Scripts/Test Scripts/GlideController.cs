@@ -38,6 +38,8 @@ public class GlideController : MonoBehaviour
 
     public LayerMask terrainLayer;
 
+	public Vector3 bounceVelocity;
+
     // Use this for initialization
     void Start()
     {
@@ -60,7 +62,8 @@ public class GlideController : MonoBehaviour
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
-        rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
+        //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
+		rb.velocity = transform.forward * Accelerate() + bounceVelocity;
     }
 
     float Accelerate()
