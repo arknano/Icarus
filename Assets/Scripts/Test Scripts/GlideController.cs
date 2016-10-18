@@ -24,21 +24,31 @@ public class GlideController : MonoBehaviour
     public float upDeccelerate = 65;
     [Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
     public float downAccelerate = 50;
-
     [Tooltip("The yellow orb target - to obtain it's transform values.")]
     public Transform yelOrb;
 
+	public Text scoreText;
+
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
-
     private Rigidbody rb;
+    private int score = 0;   
 
-    private int score = 0;
-    public Text scoreText;
+   // public LayerMask terrainLayer;
+	private Vector3 bounceVelocity;
+	public Vector3 BounceVelocity
+	{
+		get { return bounceVelocity; }
+		set { bounceVelocity = value; }
+	}
 
-    public LayerMask terrainLayer;
+	private Vector3 windVelocity;
+	public Vector3 WindVelocity
+	{
+		get { return windVelocity; }
+		set { windVelocity = value; }
+	}
 
-	public Vector3 bounceVelocity;
 
     // Use this for initialization
     void Start()
@@ -63,7 +73,7 @@ public class GlideController : MonoBehaviour
         transform.eulerAngles = angles;
 
         //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
-		rb.velocity = transform.forward * Accelerate() + bounceVelocity;
+		rb.velocity = transform.forward * Accelerate() + bounceVelocity + windVelocity;
     }
 
     float Accelerate()
