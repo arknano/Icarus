@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+
         glide = followTarget.transform.parent.gameObject.GetComponent<GlideController>();
     }
 	
@@ -22,23 +23,23 @@ public class CameraFollow : MonoBehaviour
     {
         if(followTarget)
         {
-            if (Vector3.Distance(transform.position, followTarget.transform.position) > 3)
-            {
+            //if (Vector3.Distance(transform.position, followTarget.transform.position) > 3)
+            //{
                 GameObject target = followTarget.transform.parent.gameObject;
 
-                if (glide.acceleration >= 1)
+                /*if (glide.acceleration >= 1)
                 {
                     transform.rotation = Quaternion.Lerp(transform.rotation, followTarget.transform.rotation, rotationOffset);
                 }
                 else if(glide.acceleration <= 0)
                 {
                     transform.LookAt(target.transform);
-                }
+                }*/
 
-                transform.rotation = Quaternion.Lerp(transform.rotation, followTarget.transform.rotation, rotationOffset);
-                transform.position = Vector3.Lerp(transform.position, followTarget.transform.position, positionOffset);
+                transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, rotationOffset);
+                transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);
 
-            }
+            //}
         }
     }
 }
