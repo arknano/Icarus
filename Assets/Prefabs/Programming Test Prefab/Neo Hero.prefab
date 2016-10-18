@@ -80,7 +80,7 @@ GameObject:
   - 114: {fileID: 114000012797522056}
   m_Layer: 0
   m_Name: Glider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,7 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  speedFraction: 4
+  dashCooldown: 5
+  dashLeft: 0
 --- !u!124 &124000010672511912
 Behaviour:
   m_ObjectHideFlags: 1
