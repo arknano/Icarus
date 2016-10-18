@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Updraft : MonoBehaviour
 {
-
+    [Tooltip("The tag name of the player.")]
     public string PlayerTag = "Player";
+    [Tooltip("The amount of force that pushes the player.")]
     public float force = 5;
 
     private Rigidbody rb;
@@ -23,15 +24,9 @@ public class Updraft : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Collided");
         if (col.gameObject.tag == PlayerTag)
         {
-            Debug.Log("Registered");
             rb = col.gameObject.GetComponent<Rigidbody>();
-
-            /*Vector3 dir = col.gameObject.transform.position - gameObject.transform.position;
-            dir = -dir.normalized;*/
-            //rb.AddForce(20, 0, 0, ForceMode.Impulse);
             rb.AddForce(transform.right * force, ForceMode.Impulse);
         }
     }
