@@ -35,14 +35,14 @@ public class GlideController : MonoBehaviour
     private int score = 0;   
 
    // public LayerMask terrainLayer;
-	private Vector3 bounceVelocity;
+	public Vector3 bounceVelocity;
 	public Vector3 BounceVelocity
 	{
 		get { return bounceVelocity; }
 		set { bounceVelocity = value; }
 	}
 
-	private Vector3 windVelocity;
+	public Vector3 windVelocity;
 	public Vector3 WindVelocity
 	{
 		get { return windVelocity; }
@@ -74,6 +74,9 @@ public class GlideController : MonoBehaviour
 
         //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
 		rb.velocity = transform.forward * Accelerate() + bounceVelocity + windVelocity;
+
+        windVelocity *= 0.5f;
+        bounceVelocity *= 0.9f;
     }
 
     float Accelerate()
