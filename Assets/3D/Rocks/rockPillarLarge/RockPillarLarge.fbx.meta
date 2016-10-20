@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c2b68ae7f8f98c94196f9b5956f8e0c2
-timeCreated: 1476683109
+guid: d4a449d9219a49e4ea7e7cdcf9ef2860
+timeCreated: 1476951794
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface115
+    4300000: Rock_PillrLargelowp:Group50234
+    6400000: //RootNode
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -37,7 +38,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
