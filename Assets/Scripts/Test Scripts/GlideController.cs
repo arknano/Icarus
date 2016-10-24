@@ -25,12 +25,12 @@ public class GlideController : MonoBehaviour
     public float upDeccelerate = 65;
     [Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
     public float downAccelerate = 50;
-	[Tooltip("Use a number between 99 and 1. The smaller the number, the quicker the dash slows down.")]
-	public float dashDamping = 90.0f;
-	[Tooltip("Use a number between 99 and 1. The smaller the number, the quicker you slow down from bouncing off a collision.")]
-	public float bounceDamping = 90.0f;
-	[Tooltip("Use a number between 99 and 1. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
-	public float windDamping = 50.0f;
+	[Tooltip("Use a number between 0.9 and 0.01. The smaller the number, the quicker the dash slows down.")]
+	public float dashDamping = 0.9f;
+	[Tooltip("Use a number between 0.9 and 0.01. The smaller the number, the quicker you slow down from bouncing off a collision.")]
+	public float bounceDamping = 0.9f;
+	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
+	public float windDamping = 0.5f;
 
     public GameObject gameController;
 
@@ -69,11 +69,6 @@ public class GlideController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         sK = gameController.GetComponent<ScoreKeeping>();
-
-		// * a number by damping to slow it down, eg, to * it by 0.9 will reduce the number to 90% of it's original value
-		dashDamping /= 100.0f; // to convert to decimal
-		windDamping /= 100.0f; // to convert to decimal
-		bounceDamping /= 100.0f; // to convert to decimal
     }
 
     // Update is called once per frame
@@ -93,11 +88,11 @@ public class GlideController : MonoBehaviour
         transform.eulerAngles = angles;
 
         //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
-		rb.velocity = transform.forward * Accelerate() + bounceVelocity + windVelocity + dashVelocity;
+		rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
 
-        windVelocity *= windDamping;
-        bounceVelocity *= bounceDamping;
-		dashVelocity *= dashDamping;
+        WindVelocity *= windDamping;
+        BounceVelocity *= bounceDamping;
+		DashVelocity *= dashDamping;
     }
 
     float Accelerate()
