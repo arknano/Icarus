@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OrbValue : MonoBehaviour
+public class OrbInfo : MonoBehaviour
 {
-    public int value = 1;
+    public int orbValue = 1;
 
 	// Use this for initialization
 	void Start ()

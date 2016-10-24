@@ -4,12 +4,10 @@ using System.Collections;
 
 public class ScoreKeeping : MonoBehaviour
 {
-    public int bronzeOrbValue = 1;
-    public int silverOrbValue = 5;
-    public int goldOrbValue = 10;
     public Text scoreText;
 
-    private int score;
+    private OrbInfo oI;
+    private int score = 100;
 
     // Use this for initialization
     void Start ()
@@ -25,18 +23,9 @@ public class ScoreKeeping : MonoBehaviour
 
     public void AddScore(Collider col)
     {
-        switch(col.gameObject.name)
-        {
-            case "Bronze Orb":
-                score += bronzeOrbValue;
-                break;
-            case "Silver Orb":
-                score += silverOrbValue;
-                break;
-            case "Gold Orb":
-                score += goldOrbValue;
-                break;
-        }
+        oI = col.gameObject.GetComponent<OrbInfo>();
+        score += oI.orbValue;
         scoreText.text = "Score: " + score;
+        Debug.Log(score);
     }
 }
