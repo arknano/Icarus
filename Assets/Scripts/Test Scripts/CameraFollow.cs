@@ -29,10 +29,10 @@ public class CameraFollow : MonoBehaviour
 
             distance = Vector3.Distance(target.transform.position, transform.position);
 
-            if(distance > maxDistance)
+            /*if(distance > maxDistance)
             {
                 transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.3f);
-            }
+            }*/
 
             transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, rotationOffset);
             transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);

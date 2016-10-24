@@ -4,7 +4,7 @@ using System.Collections;
 public class Bounce : MonoBehaviour 
 {
 	public float bounceIntensity = 50;
-	public float bounceDamping = 0.9f;
+	//public float bounceDamping = 0.9f;
 	public string wallTag = "Ground";
 
 	private GlideController glide;
