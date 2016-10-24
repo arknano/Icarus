@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ScoreKeeping : MonoBehaviour
@@ -6,6 +7,7 @@ public class ScoreKeeping : MonoBehaviour
     public int bronzeOrbValue = 1;
     public int silverOrbValue = 5;
     public int goldOrbValue = 10;
+    public Text scoreText;
 
     private int score;
 
@@ -25,16 +27,16 @@ public class ScoreKeeping : MonoBehaviour
     {
         switch(col.gameObject.name)
         {
-            case "bronzeOrb":
+            case "Bronze Orb":
                 score += bronzeOrbValue;
                 break;
-            case "silverOrb":
+            case "Silver Orb":
                 score += silverOrbValue;
                 break;
-            case "goldOrb":
+            case "Gold Orb":
                 score += goldOrbValue;
                 break;
         }
-
+        scoreText.text = "Score: " + score;
     }
 }

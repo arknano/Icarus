@@ -26,12 +26,9 @@ public class GlideController : MonoBehaviour
     [Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
     public float downAccelerate = 50;
 
-	public Text scoreText;
     public GameObject gameController;
 
     private ScoreKeeping sK;
-
-    public Dictionary<string, int> orbValue = new Dictionary<string, int>();
 
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
@@ -122,16 +119,10 @@ public class GlideController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Yellow Orb")
+        if (col.gameObject.tag == "ScoreCollectable")
         {
             Destroy(col.gameObject);
             sK.AddScore(col);
         }
-    }
-
-    void AddScore(int s)
-    {
-        score += s;
-        scoreText.text = "Score: " + score;
     }
 }

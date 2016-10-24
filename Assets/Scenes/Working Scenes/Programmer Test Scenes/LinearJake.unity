@@ -418,7 +418,6 @@ MonoBehaviour:
   maxVelocity: 100
   upDeccelerate: 65
   downAccelerate: 50
-  scoreText: {fileID: 0}
   gameController: {fileID: 1115627210}
   bounceVelocity: {x: 0, y: 0, z: 0}
   windVelocity: {x: 0, y: 0, z: 0}
@@ -2756,6 +2755,10 @@ Prefab:
       propertyPath: m_Name
       value: Yellow Orb (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010430748884, guid: 58ee5881d9325c045820ef729d1be298, type: 2}
+      propertyPath: m_TagString
+      value: ScoreCollectable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58ee5881d9325c045820ef729d1be298, type: 2}
   m_IsPrefabParent: 0
@@ -2827,6 +2830,7 @@ MonoBehaviour:
   bronzeOrbValue: 1
   silverOrbValue: 5
   goldOrbValue: 10
+  scoreText: {fileID: 799509161}
 --- !u!1 &1202771288
 GameObject:
   m_ObjectHideFlags: 0
