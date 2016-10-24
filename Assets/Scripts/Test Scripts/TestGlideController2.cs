@@ -23,46 +23,49 @@ public class TestGlideController2 : MonoBehaviour
 	public float upDeccelerate = 65;
 	[Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
 	public float downAccelerate = 50;
-
 	[Tooltip("The yellow orb target - to obtain it's transform values.")]
 	public Transform yelOrb;
 
-	private Rigidbody rb;
-
 	private float minVelocity = 0; // The lowest possible flight speed.
 	private Vector3 angles = Vector3.zero;
+	private Rigidbody rb;
+	private int score = 0;
+
+	//public Text scoreText;
+
+	// public LayerMask terrainLayer;
+	private Vector3 bounceVelocity;
+	public Vector3 BounceVelocity
+	{
+		get { return bounceVelocity; }
+		set { bounceVelocity = value; }
+	}
+
 
 	// Use this for initialization
-	void Start() 
-	{ 
+	void Start()
+	{
 		rb = GetComponent<Rigidbody>();
 	}
 
 	// Update is called once per frame
-	void FixedUpdate ()
+	void FixedUpdate()
 	{
-		InputDevice device = InputManager.Devices[0];
+		InputDevice device = InputManager.ActiveDevice;
 
-		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
-		float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
-		//float turn = horizontal + vertical; 
+		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
+		float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
-		if (device != null) 
-		{
-			angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
-			angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
+		angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
 
-			angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
-			angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
-			angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
-			transform.eulerAngles = angles;
+		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
+		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
+		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
+		transform.eulerAngles = angles;
 
-			//rb.AddTorque(transform.up * horizontal);
-			//rb.AddTorque(transform.forward * horizontal);
-			//rb.AddTorque(transform.right * vertical);
-
-			rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
-		}
+		//rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
+		rb.velocity = transform.forward * Accelerate() + bounceVelocity;
 	}
 
 	void OnTriggerEnter(Collider col)

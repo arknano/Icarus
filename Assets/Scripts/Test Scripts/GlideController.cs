@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using InControl;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GlideController : MonoBehaviour
@@ -24,24 +25,50 @@ public class GlideController : MonoBehaviour
     public float upDeccelerate = 65;
     [Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
     public float downAccelerate = 50;
+	[Tooltip("Use a number between 0.9 and 0.01. The smaller the number, the quicker the dash slows down.")]
+	public float dashDamping = 0.9f;
+	[Tooltip("Use a number between 0.9 and 0.01. The smaller the number, the quicker you slow down from bouncing off a collision.")]
+	public float bounceDamping = 0.9f;
+	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
+	public float windDamping = 0.5f;
 
-    [Tooltip("The yellow orb target - to obtain it's transform values.")]
-    public Transform yelOrb;
+    public GameObject gameController;
+
+    private ScoreKeeping sK;
 
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
-
     private Rigidbody rb;
+    private int score = 0;   
 
-    private int score = 0;
-    public Text scoreText;
+   // public LayerMask terrainLayer;
+	public Vector3 bounceVelocity;
+	public Vector3 BounceVelocity
+	{
+		get { return bounceVelocity; }
+		set { bounceVelocity = value; }
+	}
 
-    public LayerMask terrainLayer;
+	public Vector3 windVelocity;
+	public Vector3 WindVelocity
+	{
+		get { return windVelocity; }
+		set { windVelocity = value; }
+	}
+
+	public Vector3 dashVelocity;
+	public Vector3 DashVelocity
+	{
+		get { return dashVelocity; }
+		set { dashVelocity = value; }
+	}
+
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sK = gameController.GetComponent<ScoreKeeping>();
     }
 
     // Update is called once per frame
@@ -60,7 +87,12 @@ public class GlideController : MonoBehaviour
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
-        rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
+        //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
+		rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
+
+        WindVelocity *= windDamping;
+        BounceVelocity *= bounceDamping;
+		DashVelocity *= dashDamping;
     }
 
     float Accelerate()
@@ -101,21 +133,10 @@ public class GlideController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Yellow Orb")
+        if (col.gameObject.tag == "ScoreCollectable")
         {
             Destroy(col.gameObject);
-            AddScore(1);
+            sK.AddScore(col);
         }
-
-//		if (col.gameObject.tag == "Ground")
-//		{
-//			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-//		}
-    }
-
-    void AddScore(int s)
-    {
-        score += s;
-        scoreText.text = "Score: " + score;
     }
 }

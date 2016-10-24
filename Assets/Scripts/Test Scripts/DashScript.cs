@@ -5,7 +5,7 @@ using InControl;
 public class DashScript : MonoBehaviour 
 {		
 	[Tooltip("How quickly the glider dashes - faster dash = longer dash.")]
-	public float dashSpeed = 6.0f;
+	public float dashIntensity = 60.0f;
 	[Tooltip("How long you have to wait between dashes.")]
 	public float dashCooldown = 70.0f;
 
@@ -17,17 +17,22 @@ public class DashScript : MonoBehaviour
 
 	//public int counter = 0;
 
-    Rigidbody rb;
+    private Rigidbody rb;
+	private GlideController glide;
 
 	// Use this for initialization
 	void Start ()
     {
+		glide = GetComponent<GlideController>();
         rb = GetComponent<Rigidbody>();
     }
 
 	void FixedUpdate ()
 	{
 		InputDevice device = InputManager.ActiveDevice;
+
+		// use the bounce script idea to modify the gliders velocity
+		// make a new vector that uses transform.right to get the direction, then times it by a force, then add it to the GlideController
 
 		if (device != null) 
 		{		
@@ -36,17 +41,16 @@ public class DashScript : MonoBehaviour
 				keyDown = false;
 			}
 
-			if (currentSpeed <= 0)
+			if (dashLeft <= 0)
 			{	
 				DashCoolDown();
-				if (keyDown == false && dashLeft <= 0)
+				if (keyDown == false)
 				{
 					dashDirection = 0;
 					if((Input.GetKeyDown("q")|| device.LeftBumper.IsPressed))
 					{						
 						// Set it to left
 						dashDirection = -1;
-						currentSpeed = dashSpeed;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
@@ -54,16 +58,14 @@ public class DashScript : MonoBehaviour
 					{	
 						// Set it to right
 						dashDirection = 1;
-						currentSpeed = dashSpeed;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
 				}
-
 			}
 			else
 			{
-				rb.AddForce(DashSpeed() * (dashDirection * transform.right), ForceMode.Impulse);               
+				glide.DashVelocity = dashIntensity * transform.right * dashDirection;            
 			}
 		}
 	}

@@ -3,43 +3,41 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform followTarget;
+    public Transform target;
     public float positionOffset = 0.1f;
     public float rotationOffset = 0.1f;
-    public float fallingRotation = 90.0f;
-    public float fallingPositionOffset = 30.0f;
+    public float minDistance = 1;
+    public float maxDistance = 10;
 
     private GlideController glide;
+    public float distance;
 
+    public Vector3 offset;
     // Use this for initialization
     void Start ()
     {
 
-        glide = followTarget.transform.parent.gameObject.GetComponent<GlideController>();
+        glide = target.transform.parent.gameObject.GetComponent<GlideController>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if(followTarget)
+        if(target)
         {
-            //if (Vector3.Distance(transform.position, followTarget.transform.position) > 3)
-            //{
-                GameObject target = followTarget.transform.parent.gameObject;
+            //GameObject target = followTarget.transform.parent.gameObject;
 
-                /*if (glide.acceleration >= 1)
-                {
-                    transform.rotation = Quaternion.Lerp(transform.rotation, followTarget.transform.rotation, rotationOffset);
-                }
-                else if(glide.acceleration <= 0)
-                {
-                    transform.LookAt(target.transform);
-                }*/
+            distance = Vector3.Distance(target.transform.position, transform.position);
 
-                transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, rotationOffset);
-                transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);
+            /*if(distance > maxDistance)
+            {
+                transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.3f);
+            }*/
 
-            //}
+            transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, rotationOffset);
+            transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);
+
+            offset = target.transform.position - transform.position;
         }
     }
 }

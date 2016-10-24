@@ -3,26 +3,27 @@ using System.Collections;
 
 public class Bounce : MonoBehaviour 
 {
+	public float bounceIntensity = 50;
+	//public float bounceDamping = 0.9f;
+	public string wallTag = "Ground";
 
-	private Rigidbody rb;
+	private GlideController glide;
 
 	// Use this for initialization
 	void Start () 
-	{
-		rb = GetComponent<Rigidbody>();
+	{		
+		glide = GetComponent<GlideController>();
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () 
-	{
-		
-	}
+	void FixedUpdate () {}
 
-	void OnTriggerEnter(Collider col)
-	{
-		if (col.gameObject.tag == "Ground")
+	void OnCollisionEnter(Collision collision)
+	{		
+		if (collision.gameObject.tag == wallTag)
 		{
-			rb.AddForce(50 * (transform.forward * -1), ForceMode.Impulse);    
+			glide.BounceVelocity = bounceIntensity * collision.contacts[0].normal;
+			glide.acceleration *= 0.5f;			 
 		}
 	}
 }
