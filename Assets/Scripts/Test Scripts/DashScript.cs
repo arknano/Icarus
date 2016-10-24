@@ -29,6 +29,9 @@ public class DashScript : MonoBehaviour
 	{
 		InputDevice device = InputManager.ActiveDevice;
 
+		// use the bounce script idea to modify the gliders velocity
+		// make a new vector that uses transform.right to get the direction, then times it by a force, then add it to the GlideController
+
 		if (device != null) 
 		{		
 			if((Input.GetKeyUp("q") || !(device.LeftBumper.IsPressed)) && (Input.GetKeyUp("3") || !(device.RightBumper.IsPressed)))
