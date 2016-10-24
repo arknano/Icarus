@@ -5,15 +5,19 @@ using InControl;
 public class DashScript : MonoBehaviour 
 {		
 	[Tooltip("How quickly the glider dashes - faster dash = longer dash.")]
-	public float dashSpeed = 6.0f;
+	public float dashIntensity = 6.0f;
 	[Tooltip("How long you have to wait between dashes.")]
 	public float dashCooldown = 70.0f;
+
+	public float bounceIntensity = 50;
+	public float bounceDamping = 0.9f;
 
 	private float dashLeft = 0;
 	private float currentSpeed = 0;
 	private float dashRemains = 0;
 	private float dashDirection = 0;
 	private bool keyDown = false;
+	private GlideController glide;
 
 	//public int counter = 0;
 
@@ -23,6 +27,7 @@ public class DashScript : MonoBehaviour
 	void Start ()
     {
         rb = GetComponent<Rigidbody>();
+		glide = GetComponent<GlideController>();
     }
 
 	void FixedUpdate ()
@@ -49,7 +54,7 @@ public class DashScript : MonoBehaviour
 					{						
 						// Set it to left
 						dashDirection = -1;
-						currentSpeed = dashSpeed;
+						currentSpeed = dashIntensity;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
@@ -57,7 +62,7 @@ public class DashScript : MonoBehaviour
 					{	
 						// Set it to right
 						dashDirection = 1;
-						currentSpeed = dashSpeed;
+						currentSpeed = dashIntensity;
 						dashLeft = dashCooldown;
 						keyDown = true;
 					}
@@ -66,7 +71,9 @@ public class DashScript : MonoBehaviour
 			}
 			else
 			{
-				rb.AddForce(DashSpeed() * (dashDirection * transform.right), ForceMode.Impulse);               
+				glide.BounceVelocity = dashIntensity * transform.right;
+				glide.acceleration *= 0.5f;	
+				//rb.AddForce(DashSpeed() * (dashDirection * transform.right), ForceMode.Impulse);               
 			}
 		}
 	}
