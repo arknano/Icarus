@@ -50,6 +50,13 @@ public class GlideController : MonoBehaviour
 		set { windVelocity = value; }
 	}
 
+	public Vector3 dashVelocity;
+	public Vector3 DashVelocity
+	{
+		get { return dashVelocity; }
+		set { dashVelocity = value; }
+	}
+
 
     // Use this for initialization
     void Start()
@@ -75,7 +82,7 @@ public class GlideController : MonoBehaviour
         transform.eulerAngles = angles;
 
         //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
-		rb.velocity = transform.forward * Accelerate() + bounceVelocity + windVelocity;
+		rb.velocity = transform.forward * Accelerate() + bounceVelocity + windVelocity + dashVelocity;
 
         windVelocity *= 0.5f;
         bounceVelocity *= 0.9f;
