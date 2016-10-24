@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using InControl;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GlideController : MonoBehaviour
@@ -24,10 +25,12 @@ public class GlideController : MonoBehaviour
     public float upDeccelerate = 65;
     [Tooltip("How fast the glider accelerates when aimed downward. Smaller numbers means faster acceleration.")]
     public float downAccelerate = 50;
-    [Tooltip("The yellow orb target - to obtain it's transform values.")]
-    public Transform yelOrb;
 
 	public Text scoreText;
+
+
+
+    public Dictionary<string, int> orbValue = new Dictionary<string, int>();
 
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
@@ -122,11 +125,6 @@ public class GlideController : MonoBehaviour
             Destroy(col.gameObject);
             AddScore(1);
         }
-
-//		if (col.gameObject.tag == "Ground")
-//		{
-//			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-//		}
     }
 
     void AddScore(int s)
