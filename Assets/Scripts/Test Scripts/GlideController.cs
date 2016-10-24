@@ -27,8 +27,9 @@ public class GlideController : MonoBehaviour
     public float downAccelerate = 50;
 
 	public Text scoreText;
+    public GameObject gameController;
 
-
+    private ScoreKeeping sK;
 
     public Dictionary<string, int> orbValue = new Dictionary<string, int>();
 
@@ -57,6 +58,7 @@ public class GlideController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sK = gameController.GetComponent<ScoreKeeping>();
     }
 
     // Update is called once per frame
@@ -123,7 +125,7 @@ public class GlideController : MonoBehaviour
         if (col.gameObject.tag == "Yellow Orb")
         {
             Destroy(col.gameObject);
-            AddScore(1);
+            sK.AddScore(col);
         }
     }
 

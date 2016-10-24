@@ -243,6 +243,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010258064630, guid: e61f9ac08cd9de7488771affaeb43b8d,
+        type: 2}
+      propertyPath: gameObject
+      value: 
+      objectReference: {fileID: 1115627210}
+    - target: {fileID: 114000010258064630, guid: e61f9ac08cd9de7488771affaeb43b8d,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1115627210}
     m_RemovedComponents:
     - {fileID: 114000012781328900, guid: e61f9ac08cd9de7488771affaeb43b8d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e61f9ac08cd9de7488771affaeb43b8d, type: 2}
@@ -408,8 +418,8 @@ MonoBehaviour:
   maxVelocity: 100
   upDeccelerate: 65
   downAccelerate: 50
-  yelOrb: {fileID: 0}
   scoreText: {fileID: 0}
+  gameController: {fileID: 1115627210}
   bounceVelocity: {x: 0, y: 0, z: 0}
   windVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &204529538
@@ -2759,6 +2769,7 @@ GameObject:
   - 4: {fileID: 1115627212}
   - 114: {fileID: 1115627211}
   - 114: {fileID: 1115627213}
+  - 114: {fileID: 1115627214}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2802,6 +2813,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060fa18fcc6d9204b95cdfb619d6f001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1115627214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115627210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c877f2e1ece84da91dcd5d312c4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bronzeOrbValue: 1
+  silverOrbValue: 5
+  goldOrbValue: 10
 --- !u!1 &1202771288
 GameObject:
   m_ObjectHideFlags: 0
