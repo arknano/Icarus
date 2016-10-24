@@ -9,7 +9,7 @@ public class NewCameraTest : MonoBehaviour
     public float minDistance = 1;
     public float maxDistance = 10;
 
-    private GlideController glide;
+    private Rigidbody rb;
     public float distance;
 
     public Vector3 offset;
@@ -17,7 +17,7 @@ public class NewCameraTest : MonoBehaviour
     void Start()
     {
 
-        glide = target.transform.parent.gameObject.GetComponent<GlideController>();
+        rb = target.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,17 +25,16 @@ public class NewCameraTest : MonoBehaviour
     {
         if (target)
         {
-            //GameObject target = followTarget.transform.parent.gameObject;
+            /*distance = Vector3.Distance(target.transform.position, transform.position);
+            Debug.Log(distance);
+            if (distance != maxDistance)
+            {*/ 
+                  transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.3f);
+            //}
 
-            distance = Vector3.Distance(target.transform.position, transform.position);
-
-            /*if(distance > maxDistance)
-            {
-                transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.3f);
-            }*/
-
+            //transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);
             transform.rotation = Quaternion.Lerp(transform.rotation, target.transform.rotation, rotationOffset);
-            transform.position = Vector3.Lerp(transform.position, target.transform.position, positionOffset);
+          
 
             offset = target.transform.position - transform.position;
         }
