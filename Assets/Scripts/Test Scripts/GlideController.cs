@@ -92,6 +92,8 @@ public class GlideController : MonoBehaviour
 		//acceleration = rb.velocity.z;
 		//Debug.Log(rb.velocity.magnitude); 
 
+        Debug.Log(rb.velocity.magnitude);
+
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
