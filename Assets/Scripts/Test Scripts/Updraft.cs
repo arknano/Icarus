@@ -33,7 +33,12 @@ public class Updraft : MonoBehaviour
         gc = col.GetComponent<GlideController>();
         if (gc != null)
         {
-            gc.WindVelocity = windIntensity * transform.right;
+			gc.WindVelocity = windIntensity * transform.right;
+
+			// high +ve values = high tailwind, high -ve = headwind, zero = wind is side-on
+			float tailwind = Vector3.Dot(gc.transform.forward, transform.right) * windIntensity;
+
+			gc.acceleration += tailwind * Time.deltaTime + 0.1f;
         }
     }
 
