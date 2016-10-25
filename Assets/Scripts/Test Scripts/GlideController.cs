@@ -90,6 +90,8 @@ public class GlideController : MonoBehaviour
         //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
 		rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
 
+        Debug.Log(rb.velocity.magnitude);
+
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
