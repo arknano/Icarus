@@ -37,8 +37,8 @@ public class Updraft : MonoBehaviour
 
 			// high +ve values = high tailwind, high -ve = headwind, zero = wind is side-on
 			float tailwind = Vector3.Dot(gc.transform.forward, transform.right) * windIntensity;
-
-			gc.acceleration += tailwind * Time.deltaTime + 0.1f;
+			//Debug.Log(tailwind * 0.1f);
+			gc.acceleration += tailwind * Time.deltaTime * 0.1f;
         }
     }
 

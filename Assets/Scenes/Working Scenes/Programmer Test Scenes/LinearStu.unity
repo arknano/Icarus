@@ -262,7 +262,7 @@ GameObject:
   - 218: {fileID: 570381998}
   - 154: {fileID: 570381997}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Stu's Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,15 +331,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010334007198, guid: 49bc4004d7a48a845a8427cb70659e54, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 185.3
+      value: 184
       objectReference: {fileID: 0}
     - target: {fileID: 4000010334007198, guid: 49bc4004d7a48a845a8427cb70659e54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 107.4
+      value: 130.2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010334007198, guid: 49bc4004d7a48a845a8427cb70659e54, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 293.6
+      value: 291.4
       objectReference: {fileID: 0}
     - target: {fileID: 4000010334007198, guid: 49bc4004d7a48a845a8427cb70659e54, type: 2}
       propertyPath: m_LocalRotation.x
