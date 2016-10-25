@@ -39,6 +39,11 @@ public class Updraft : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        inWind = false;
+        //inWind = true;
+        gc = col.GetComponent<GlideController>();
+        if (gc != null)
+        {
+            gc.acceleration = windIntensity * gc.acceleration;
+        }
     }
 }
