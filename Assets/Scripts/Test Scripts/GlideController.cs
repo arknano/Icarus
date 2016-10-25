@@ -69,6 +69,7 @@ public class GlideController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         sK = gameController.GetComponent<ScoreKeeping>();
+		rb.velocity = new Vector3(0,0,200);
     }
 
     // Update is called once per frame
@@ -87,10 +88,11 @@ public class GlideController : MonoBehaviour
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
-        //rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * Accelerate())); // forward movement
-		rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
+        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
+		//acceleration = rb.velocity.z;
+		//Debug.Log(rb.velocity.magnitude); 
 
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
