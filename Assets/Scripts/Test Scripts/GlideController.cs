@@ -128,10 +128,10 @@ public class GlideController : MonoBehaviour
                 acceleration = minVelocity;
             }
         }
-        else if (acceleration > maxVelocity)
-        {
-            acceleration = maxVelocity;
-        }
+//        else if (acceleration > maxVelocity)
+//        {
+//            acceleration = maxVelocity;
+//        }
         return acceleration;
     }
 
