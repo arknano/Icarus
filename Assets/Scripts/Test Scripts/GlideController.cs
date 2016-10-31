@@ -88,7 +88,7 @@ public class GlideController : MonoBehaviour
         
 		//angles.x = Mathf.LerpAngle(angles.x, reAdjustAngle, Time.deltaTime * reAdjustRate); // up and down rotation reset
 
-		float forwardSpeed = transform.forward * Vector3.Dot(transform.forward, rb.velocity);
+		float forwardSpeed = Vector3.Dot(transform.forward, rb.velocity);
 
 		// Adjust angles.x based on forward speed.
 
