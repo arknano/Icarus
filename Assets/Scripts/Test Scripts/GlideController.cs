@@ -14,9 +14,9 @@ public class GlideController : MonoBehaviour
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
     [Tooltip("Angle the glider readjusts to when controls are released.")]
-    public float readjustAngle = 10;
+    public float reAdjustAngle = 10;
     [Tooltip("The speed the glider readjusts when controls are released.")]
-    public float readjustRate = 0.4f;
+    public float reAdjustRate = 0.4f;
     [Tooltip("How fast the glider can accelerate.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
@@ -85,7 +85,7 @@ public class GlideController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
-        angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+        angles.x = Mathf.LerpAngle(angles.x, reAdjustAngle, Time.deltaTime * reAdjustRate); // up and down rotation reset
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
