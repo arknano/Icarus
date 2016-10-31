@@ -6,11 +6,12 @@ public class Updraft : MonoBehaviour
     [Tooltip("The tag name of the player.")]
     public string PlayerTag = "Player";
     [Tooltip("The amount of force that pushes the player.")]
-    public float windIntensity = 50;
-    public float windDamping = 0.5f;
+    public float windIntensity = 50;   
+	[Tooltip("How quickly the wind affects acceleration, between 0.01 and 1. The value 0.01 is slowest, 1 is fastest.")]
+	public float boostRate = 0.4f;
 
     private GlideController gc;
-    private bool inWind = false;
+    //private bool inWind = false;
 
     // Use this for initialization
     void Start() { }
@@ -19,7 +20,7 @@ public class Updraft : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        inWind = true;
+        //inWind = true;
         gc = col.GetComponent<GlideController>();
         if (gc != null)
         {
@@ -27,7 +28,7 @@ public class Updraft : MonoBehaviour
 
 			// high +ve values = high tailwind, high -ve = headwind, zero = wind is side-on
 			float tailwind = Vector3.Dot(gc.transform.forward, transform.right) * windIntensity;
-			gc.acceleration += tailwind * Time.deltaTime * 0.1f;
+			gc.acceleration += tailwind * Time.deltaTime * boostRate;
 			Debug.Log(gc.acceleration);
         }
     }
