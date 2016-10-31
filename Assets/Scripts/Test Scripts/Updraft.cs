@@ -13,19 +13,9 @@ public class Updraft : MonoBehaviour
     private bool inWind = false;
 
     // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    void Start() { }
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        //if(gc && inWind == false)
-        //{
-        //    gc.WindVelocity *= 0.9f;
-        //}
-    }
+    void FixedUpdate() { }
 
     void OnTriggerStay(Collider col)
     {
