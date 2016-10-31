@@ -14,9 +14,9 @@ public class GlideController : MonoBehaviour
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
     [Tooltip("Angle the glider readjusts to when controls are released.")]
-    public float readjustAngle = 10;
+    public float reAdjustAngle = 10;
     [Tooltip("The speed the glider readjusts when controls are released.")]
-    public float readjustRate = 0.4f;
+    public float reAdjustRate = 0.4f;
     [Tooltip("How fast the glider can accelerate.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
@@ -31,6 +31,8 @@ public class GlideController : MonoBehaviour
 	public float bounceDamping = 0.9f;
 	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
 	public float windDamping = 0.5f;
+	[Tooltip("READ ONLY. To give a speed read out.")]
+	public float speed = 0;
 
     public GameObject gameController;
 
@@ -75,13 +77,21 @@ public class GlideController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+		speed = rb.velocity.magnitude;
+
         InputDevice device = InputManager.ActiveDevice;
 
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
-        angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+        
+		//angles.x = Mathf.LerpAngle(angles.x, reAdjustAngle, Time.deltaTime * reAdjustRate); // up and down rotation reset
+
+		float forwardSpeed = Vector3.Dot(transform.forward, rb.velocity);
+
+		// Adjust angles.x based on forward speed.
+
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
