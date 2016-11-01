@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000012660004418}
   - 23: {fileID: 23000011918265374}
   - 95: {fileID: 95000013381663350}
+  - 64: {fileID: 64000013905979754}
   m_Layer: 0
   m_Name: FloatIMedium
   m_TagString: Ground
@@ -77,6 +78,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011641265774}
+  m_Mesh: {fileID: 4300000, guid: 4f10cbf47f0cccc499364301282cbc16, type: 3}
+--- !u!64 &64000013905979754
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011641265774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 4f10cbf47f0cccc499364301282cbc16, type: 3}
 --- !u!95 &95000013381663350
 Animator:
