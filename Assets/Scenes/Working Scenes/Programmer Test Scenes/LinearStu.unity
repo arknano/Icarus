@@ -204,8 +204,8 @@ MonoBehaviour:
   artificialGravity: 1
   smooth: 1
   turningSensitivity: 45
-  readjustAngle: 10
-  readjustRate: 0.4
+  reAdjustAngle: 10
+  reAdjustRate: 0.4
   acceleration: 30
   maxVelocity: 100
   upDeccelerate: 65
@@ -213,7 +213,9 @@ MonoBehaviour:
   dashDamping: 0.9
   bounceDamping: 0.9
   windDamping: 0.5
+  speed: 0
   gameController: {fileID: 0}
+  forwardSpeed: 0
   bounceVelocity: {x: 0, y: 0, z: 0}
   windVelocity: {x: 0, y: 0, z: 0}
   dashVelocity: {x: 0, y: 0, z: 0}

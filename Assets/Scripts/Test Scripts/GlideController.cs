@@ -78,14 +78,12 @@ public class GlideController : MonoBehaviour
     void FixedUpdate()
     {
 		//speed = rb.velocity.magnitude;
-
         InputDevice device = InputManager.ActiveDevice;
 
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset        
-		//angles.x = Mathf.LerpAngle(angles.x, reAdjustAngle, Time.deltaTime * reAdjustRate); // up and down rotation reset
 
 		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
 		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 100) / 100.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
@@ -93,18 +91,12 @@ public class GlideController : MonoBehaviour
 		float dipRate = (forwardSpeed) * 200 * Time.deltaTime; // 200 = angles per second -- how much you dip
 		angles.x += dipRate; // make it dip
 
-		// Adjust angles.x based on forward speed.
-
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
         rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
-		//acceleration = rb.velocity.z;
-		//Debug.Log(rb.velocity.magnitude); 
-
-        //Debug.Log(rb.velocity.magnitude);
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
