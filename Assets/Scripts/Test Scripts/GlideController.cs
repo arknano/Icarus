@@ -11,10 +11,6 @@ public class GlideController : MonoBehaviour
     public bool artificialGravity = true;
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
-//    [Tooltip("Angle the glider readjusts to when controls are released.")]
-//    public float reAdjustAngle = 10;
-//    [Tooltip("The speed the glider readjusts when controls are released.")]
-//    public float reAdjustRate = 0.4f;
     [Tooltip("How fast the glider can accelerate.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
@@ -32,9 +28,9 @@ public class GlideController : MonoBehaviour
 //	[Tooltip("READ ONLY. To give a speed read out.")]
 //	public float speed = 0;
 
-    public GameObject gameController;
+    //public GameObject gameController;
 
-    private ScoreKeeping sK;
+	private ScoreKeeping scoreKeeper;
 	private float smooth = 1.0f;
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
@@ -65,13 +61,13 @@ public class GlideController : MonoBehaviour
 		set { dashVelocity = value; }
 	}
 
-
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        sK = gameController.GetComponent<ScoreKeeping>();
-		rb.velocity = new Vector3(0,0,200);
+		scoreKeeper = FindObjectOfType<ScoreKeeping>();
+        //sK = gameController.GetComponent<ScoreKeeping>();
+		acceleration = 50;
     }
 
     // Update is called once per frame
@@ -110,7 +106,7 @@ public class GlideController : MonoBehaviour
         Vector3 originalPos = transform.position;
         yield return new WaitForSeconds(2f);
         Vector3 finalPos = transform.position;
-        Debug.Log((finalPos - originalPos).magnitude);
+        //Debug.Log((finalPos - originalPos).magnitude);
         if((finalPos - originalPos).magnitude < 5)
         {
             endGame();
@@ -160,10 +156,11 @@ public class GlideController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+		Debug.Log(scoreKeeper);
         if (col.gameObject.tag == "ScoreCollectable")
-        {
-            Destroy(col.gameObject);
-            sK.AddScore(col);
+        {            
+            scoreKeeper.AddScore(col);
+			Destroy(col.gameObject);
         }
     }
 }
