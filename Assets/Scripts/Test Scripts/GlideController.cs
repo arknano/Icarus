@@ -28,7 +28,7 @@ public class GlideController : MonoBehaviour
 //	[Tooltip("READ ONLY. To give a speed read out.")]
 //	public float speed = 0;
 
-    //public GameObject gameController;
+    public GameObject gameController;
 
 	private ScoreKeeping scoreKeeper;
 	private float smooth = 1.0f;
@@ -65,8 +65,8 @@ public class GlideController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-		scoreKeeper = FindObjectOfType<ScoreKeeping>();
-        //sK = gameController.GetComponent<ScoreKeeping>();
+        //scoreKeeper = FindObjectOfType<ScoreKeeping>();
+        scoreKeeper = gameController.GetComponent<ScoreKeeping>();
 		acceleration = 50;
     }
 
