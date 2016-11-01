@@ -22,7 +22,7 @@ public class Bounce : MonoBehaviour
 	{		
 		if (collision.gameObject.tag == wallTag)
 		{
-			glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal;
+			glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal);
 			glide.acceleration *= 0.5f;			 
 		}
 	}

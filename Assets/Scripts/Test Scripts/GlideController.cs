@@ -104,7 +104,7 @@ public class GlideController : MonoBehaviour
     IEnumerator checkPos()
     {
         Vector3 originalPos = transform.position;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Vector3 finalPos = transform.position;
         //Debug.Log((finalPos - originalPos).magnitude);
         if((finalPos - originalPos).magnitude < 5)
