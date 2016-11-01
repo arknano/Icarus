@@ -23,8 +23,8 @@ GameObject:
   - 23: {fileID: 23000013732734338}
   - 95: {fileID: 95000013010629796}
   m_Layer: 0
-  m_Name: FloatILarge
-  m_TagString: Untagged
+  m_Name: FloatILarge2
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011943001356}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -401.72272, y: 249.7, z: 116.99707}
+  m_LocalPosition: {x: 461.871, y: 8.208202, z: 573.2645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
