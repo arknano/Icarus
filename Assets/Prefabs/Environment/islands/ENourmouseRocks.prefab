@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000011217661994}
   - 23: {fileID: 23000011437942278}
   - 95: {fileID: 95000013351037478}
+  - 64: {fileID: 64000014218627642}
   m_Layer: 0
   m_Name: FloatITall (1)
   m_TagString: Ground
@@ -55,6 +56,7 @@ GameObject:
   - 33: {fileID: 33000011478563286}
   - 23: {fileID: 23000010571341458}
   - 95: {fileID: 95000011077562686}
+  - 64: {fileID: 64000010052711572}
   m_Layer: 0
   m_Name: FloatITall
   m_TagString: Ground
@@ -82,8 +84,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011173335428}
   m_LocalRotation: {x: -0.99978894, y: -0, z: -0, w: -0.020544998}
-  m_LocalPosition: {x: 5.497487, y: 67, z: 14.480347}
-  m_LocalScale: {x: 14.114396, y: 13.2435875, z: 14.124059}
+  m_LocalPosition: {x: 6.4631, y: 67, z: 14.480347}
+  m_LocalScale: {x: 16.59361, y: 13.2435875, z: 14.124059}
   m_LocalEulerAnglesHint: {x: -182.331, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012289522844}
@@ -94,8 +96,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012004284974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6925125, y: 429.3, z: 338.51965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26.492512, y: 58.723022, z: 3.319641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -174,6 +176,30 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012432185360}
+  m_Mesh: {fileID: 4300000, guid: 9808a08596caf8f429d2a54bc3b376b4, type: 3}
+--- !u!64 &64000010052711572
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012432185360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 9808a08596caf8f429d2a54bc3b376b4, type: 3}
+--- !u!64 &64000014218627642
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011173335428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 9808a08596caf8f429d2a54bc3b376b4, type: 3}
 --- !u!95 &95000011077562686
 Animator:
