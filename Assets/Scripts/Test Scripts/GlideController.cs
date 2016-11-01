@@ -11,10 +11,6 @@ public class GlideController : MonoBehaviour
     public bool artificialGravity = true;
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
-//    [Tooltip("Angle the glider readjusts to when controls are released.")]
-//    public float reAdjustAngle = 10;
-//    [Tooltip("The speed the glider readjusts when controls are released.")]
-//    public float reAdjustRate = 0.4f;
     [Tooltip("How fast the glider can accelerate.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
@@ -32,9 +28,9 @@ public class GlideController : MonoBehaviour
 //	[Tooltip("READ ONLY. To give a speed read out.")]
 //	public float speed = 0;
 
-    public GameObject gameController;
+    //public GameObject gameController;
 
-    private ScoreKeeping sK;
+	private ScoreKeeping scoreKeeper;
 	private float smooth = 1.0f;
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
@@ -65,27 +61,25 @@ public class GlideController : MonoBehaviour
 		set { dashVelocity = value; }
 	}
 
-
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        sK = gameController.GetComponent<ScoreKeeping>();
-		rb.velocity = new Vector3(0,0,200);
+		scoreKeeper = FindObjectOfType<ScoreKeeping>();
+        //sK = gameController.GetComponent<ScoreKeeping>();
+		acceleration = 50;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 		//speed = rb.velocity.magnitude;
-
         InputDevice device = InputManager.ActiveDevice;
 
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset        
-		//angles.x = Mathf.LerpAngle(angles.x, reAdjustAngle, Time.deltaTime * reAdjustRate); // up and down rotation reset
 
 		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
 		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 100) / 100.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
@@ -93,18 +87,12 @@ public class GlideController : MonoBehaviour
 		float dipRate = (forwardSpeed) * 200 * Time.deltaTime; // 200 = angles per second -- how much you dip
 		angles.x += dipRate; // make it dip
 
-		// Adjust angles.x based on forward speed.
-
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
         rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
-		//acceleration = rb.velocity.z;
-		//Debug.Log(rb.velocity.magnitude); 
-
-        //Debug.Log(rb.velocity.magnitude);
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
@@ -118,7 +106,7 @@ public class GlideController : MonoBehaviour
         Vector3 originalPos = transform.position;
         yield return new WaitForSeconds(2f);
         Vector3 finalPos = transform.position;
-        Debug.Log((finalPos - originalPos).magnitude);
+        //Debug.Log((finalPos - originalPos).magnitude);
         if((finalPos - originalPos).magnitude < 5)
         {
             endGame();
@@ -168,10 +156,11 @@ public class GlideController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+		Debug.Log(scoreKeeper);
         if (col.gameObject.tag == "ScoreCollectable")
-        {
-            Destroy(col.gameObject);
-            sK.AddScore(col);
+        {            
+            scoreKeeper.AddScore(col);
+			Destroy(col.gameObject);
         }
     }
 }

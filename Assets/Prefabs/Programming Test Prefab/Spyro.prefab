@@ -428,21 +428,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artificialGravity: 1
-  smooth: 1
   turningSensitivity: 60
-  readjustAngle: 10
-  readjustRate: 0.4
-  acceleration: 30
+  acceleration: 60
   maxVelocity: 100
   upDeccelerate: 65
   downAccelerate: 50
   dashDamping: 0.9
   bounceDamping: 0.9
   windDamping: 0.5
-  gameController: {fileID: 0}
-  bounceVelocity: {x: 0, y: 0, z: 0}
-  windVelocity: {x: 0, y: 0, z: 0}
-  dashVelocity: {x: 0, y: 0, z: 0}
+  forwardSpeed: 0
 --- !u!124 &124000013498169460
 Behaviour:
   m_ObjectHideFlags: 1
