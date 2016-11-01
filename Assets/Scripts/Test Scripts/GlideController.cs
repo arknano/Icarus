@@ -107,6 +107,25 @@ public class GlideController : MonoBehaviour
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
+
+        StartCoroutine(checkPos());
+    }
+
+    IEnumerator checkPos()
+    {
+        Vector3 originalPos = transform.position;
+        yield return new WaitForSeconds(2f);
+        Vector3 finalPos = transform.position;
+        Debug.Log((finalPos - originalPos).magnitude);
+        if((finalPos - originalPos).magnitude < 5)
+        {
+            endGame();
+        }
+    }
+
+    void endGame()
+    {
+        Debug.Log("Game Ended");
     }
 
     float Accelerate()
