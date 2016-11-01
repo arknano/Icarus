@@ -11,7 +11,7 @@ public class GlideController : MonoBehaviour
     public bool artificialGravity = true;
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
-    [Tooltip("Angle the glider readjusts to when controls are released.")]
+//    [Tooltip("Angle the glider readjusts to when controls are released.")]
 //    public float reAdjustAngle = 10;
 //    [Tooltip("The speed the glider readjusts when controls are released.")]
 //    public float reAdjustRate = 0.4f;
@@ -101,6 +101,25 @@ public class GlideController : MonoBehaviour
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
+
+        StartCoroutine(checkPos());
+    }
+
+    IEnumerator checkPos()
+    {
+        Vector3 originalPos = transform.position;
+        yield return new WaitForSeconds(2f);
+        Vector3 finalPos = transform.position;
+        Debug.Log((finalPos - originalPos).magnitude);
+        if((finalPos - originalPos).magnitude < 5)
+        {
+            endGame();
+        }
+    }
+
+    void endGame()
+    {
+        Debug.Log("Game Ended");
     }
 
     float Accelerate()
