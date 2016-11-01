@@ -3,30 +3,24 @@ using System.Collections;
 
 public class RotateObject : MonoBehaviour
 {
-    public float rotateSpeed = 50;
-    public bool usingRigidbody = true;
+    [Tooltip("Set to zero to not rotate on this angle.")]
+    public float rotateSpeedX = 0;
+    [Tooltip("Set to zero to not rotate on this angle.")]
+    public float rotateSpeedY = 50;
+    [Tooltip("Set to zero to not rotate on this angle.")]
+    public float rotateSpeedZ = 0;
 
     private float time;
-    private Rigidbody rb;
 
 	// Use this for initialization
 	void Start ()
     {
-        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if(usingRigidbody == true)
-        {
-            time = Time.deltaTime;
-            rb.transform.Rotate(0, rotateSpeed * time, rotateSpeed * time);
-        }
-        else
-        {
-            time = Time.deltaTime;
-            transform.Rotate(0, rotateSpeed * time, rotateSpeed * time);
-        } 	
+       time = Time.deltaTime;
+       transform.Rotate(rotateSpeedX * time, rotateSpeedY * time, rotateSpeedZ * time);
 	}
 }
