@@ -25,12 +25,12 @@ public class Bounce : MonoBehaviour
 		{
 			if (collision.contacts[0].normal.y >= 0.3f)
 			{
-				Debug.Log("Death");
+				Debug.Log("You died.");
 				Time.timeScale = 0;
 			}
 			else if (collision.contacts[0].normal.y < 0.3f)
 			{
-				Debug.Log("ALIVE!!!!!");
+				Debug.Log("You had a collision with a wall surface.");
 				glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal);
 				glide.acceleration *= 0.5f;
 			}					 
