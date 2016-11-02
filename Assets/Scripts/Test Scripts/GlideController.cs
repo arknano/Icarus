@@ -25,6 +25,8 @@ public class GlideController : MonoBehaviour
 	public float bounceDamping = 0.9f;
 	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
 	public float windDamping = 0.5f;
+	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
+	public float dipAnglesPerSecond = 200.0f;
 //	[Tooltip("READ ONLY. To give a speed read out.")]
 //	public float speed = 0;
 
@@ -82,9 +84,9 @@ public class GlideController : MonoBehaviour
 		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset        
 
 		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
-		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 100) / 100.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
+		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 75) / 85.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
 		forwardSpeed *= forwardSpeed; // squaring it to create a curved adjustment in speed
-		float dipRate = (forwardSpeed) * 200 * Time.deltaTime; // 200 = angles per second -- how much you dip
+		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip
 		angles.x += dipRate; // make it dip
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
