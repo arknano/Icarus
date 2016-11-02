@@ -23,6 +23,7 @@ GameObject:
   - 23: {fileID: 23000012318877938}
   - 95: {fileID: 95000013697465040}
   - 114: {fileID: 114000011048236546}
+  - 64: {fileID: 64000013658148294}
   m_Layer: 0
   m_Name: FloatTear (2)
   m_TagString: Obstacle
@@ -57,6 +58,7 @@ GameObject:
   - 23: {fileID: 23000013325893720}
   - 95: {fileID: 95000010046210366}
   - 114: {fileID: 114000013321193946}
+  - 64: {fileID: 64000012000163428}
   m_Layer: 0
   m_Name: FloatTear
   m_TagString: Obstacle
@@ -76,6 +78,7 @@ GameObject:
   - 23: {fileID: 23000012513157044}
   - 95: {fileID: 95000012654186186}
   - 114: {fileID: 114000013942449984}
+  - 64: {fileID: 64000011291553108}
   m_Layer: 0
   m_Name: FloatTear (1)
   m_TagString: Obstacle
@@ -90,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010612510350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -106.40248, y: 456.1185, z: 387}
+  m_LocalPosition: {x: 369.0714, y: 164.7545, z: 99.83276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -245,6 +248,42 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010453953302}
+  m_Mesh: {fileID: 4300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+--- !u!64 &64000011291553108
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013977425852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+--- !u!64 &64000012000163428
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010729661408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+--- !u!64 &64000013658148294
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010453953302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
 --- !u!95 &95000010046210366
 Animator:
