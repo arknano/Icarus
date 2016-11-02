@@ -26,7 +26,7 @@ public class Bounce : MonoBehaviour
 			if (collision.contacts[0].normal.y >= 0.3f)
 			{
 				Debug.Log("Death");
-				Application.Quit();
+				Time.timeScale = 0;
 			}
 			else if (collision.contacts[0].normal.y < 0.3f)
 			{
