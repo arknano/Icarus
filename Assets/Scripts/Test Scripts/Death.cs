@@ -17,16 +17,10 @@ public class Death : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
-        explosion.gameObject.transform.position = transform.position; 
-
-        explosion.Play();
-        Debug.Log("Collided");
-
-        transform.GetChild(0).parent = null;
-
-        Destroy(gameObject);
+        Vector3 ray = col.transform.position - transform.position;
+        Physics.Raycast()
     }
 
 }
