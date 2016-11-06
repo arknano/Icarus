@@ -5,7 +5,8 @@ public class Bounce : MonoBehaviour
 {
 	public float bounceIntensity = 50;
 	//public float bounceDamping = 0.9f;
-	public string wallTag = "Ground";
+	public string obstacleTag = "Obstacle";
+	public string groundTag = "Ground";
 
 	private GlideController glide;
 
@@ -20,10 +21,24 @@ public class Bounce : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{		
-		if (collision.gameObject.tag == wallTag)
+		if (collision.gameObject.tag == groundTag )
+		{
+			if (collision.contacts[0].normal.y >= 0.3f)
+			{
+				Debug.Log("You died.");
+				Time.timeScale = 0;
+			}
+			else if (collision.contacts[0].normal.y < 0.3f)
+			{
+				Debug.Log("You had a collision with a wall surface.");
+				glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal);
+				glide.acceleration *= 0.5f;
+			}					 
+		}
+		else if (collision.gameObject.tag == obstacleTag)
 		{
 			glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal);
-			glide.acceleration *= 0.5f;			 
-		}
+			glide.acceleration *= 0.5f;	
+		}	
 	}
 }
