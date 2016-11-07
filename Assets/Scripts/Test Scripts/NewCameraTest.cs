@@ -9,15 +9,12 @@ public class NewCameraTest : MonoBehaviour
     public float minDistance = 1;
     public float maxDistance = 10;
 
-    private Rigidbody rb;
     public float distance;
 
     public Vector3 offset;
     // Use this for initialization
     void Start()
     {
-
-        rb = target.transform.parent.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
