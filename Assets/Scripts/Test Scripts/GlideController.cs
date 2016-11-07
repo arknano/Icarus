@@ -9,14 +9,8 @@ public class GlideController : MonoBehaviour
 {
     [Tooltip("Whether to use this objects artificial gravity or not.")]
     public bool artificialGravity = true;
-    [Tooltip("The speed at which the glider realigns itself.")]
-    public float smooth = 1.0f;
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
-    [Tooltip("Angle the glider readjusts to when controls are released.")]
-    public float readjustAngle = 10;
-    [Tooltip("The speed the glider readjusts when controls are released.")]
-    public float readjustRate = 0.4f;
     [Tooltip("How fast the glider can accelerate.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
@@ -31,57 +25,69 @@ public class GlideController : MonoBehaviour
 	public float bounceDamping = 0.9f;
 	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
 	public float windDamping = 0.5f;
+	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
+	public float dipAnglesPerSecond = 200.0f;
+//	[Tooltip("READ ONLY. To give a speed read out.")]
+//	public float speed = 0;
 
     public GameObject gameController;
 
-    private ScoreKeeping sK;
-
+	private ScoreKeeping scoreKeeper;
+	private float smooth = 1.0f;
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
     private Rigidbody rb;
     private int score = 0;   
 
+	public float forwardSpeed = 0;
+
    // public LayerMask terrainLayer;
-	public Vector3 bounceVelocity;
+	private Vector3 bounceVelocity;
 	public Vector3 BounceVelocity
 	{
 		get { return bounceVelocity; }
 		set { bounceVelocity = value; }
 	}
 
-	public Vector3 windVelocity;
+	private Vector3 windVelocity;
 	public Vector3 WindVelocity
 	{
 		get { return windVelocity; }
 		set { windVelocity = value; }
 	}
 
-	public Vector3 dashVelocity;
+	private Vector3 dashVelocity;
 	public Vector3 DashVelocity
 	{
 		get { return dashVelocity; }
 		set { dashVelocity = value; }
 	}
 
-
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        sK = gameController.GetComponent<ScoreKeeping>();
-		rb.velocity = new Vector3(0,0,200);
+        //scoreKeeper = FindObjectOfType<ScoreKeeping>();
+        scoreKeeper = gameController.GetComponent<ScoreKeeping>();
+		acceleration = 50;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+		//speed = rb.velocity.magnitude;
         InputDevice device = InputManager.ActiveDevice;
 
 		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X; // move horizontal - get the control stick or keyboards horizontal movement input
         float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y; // move vertical - get the control stick or keyboards vertical movement input
 
-		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset
-        angles.x = Mathf.LerpAngle(angles.x, readjustAngle, Time.deltaTime * readjustRate); // up and down rotation reset
+		angles.z = Mathf.LerpAngle(angles.z, 0, Time.deltaTime * smooth); // banking reset        
+
+		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
+		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 75) / 85.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
+		forwardSpeed *= forwardSpeed; // squaring it to create a curved adjustment in speed
+		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip
+		angles.x += dipRate; // make it dip
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
@@ -89,14 +95,29 @@ public class GlideController : MonoBehaviour
         transform.eulerAngles = angles;
 
         rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
-		//acceleration = rb.velocity.z;
-		//Debug.Log(rb.velocity.magnitude); 
-
-        //Debug.Log(rb.velocity.magnitude);
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
+
+        StartCoroutine(checkPos());
+    }
+
+    IEnumerator checkPos()
+    {
+        Vector3 originalPos = transform.position;
+        yield return new WaitForSeconds(1f);
+        Vector3 finalPos = transform.position;
+        //Debug.Log((finalPos - originalPos).magnitude);
+        if((finalPos - originalPos).magnitude < 5)
+        {
+            endGame();
+        }
+    }
+
+    void endGame()
+    {
+        Debug.Log("Game Ended");
     }
 
     float Accelerate()
@@ -137,10 +158,11 @@ public class GlideController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+		Debug.Log(scoreKeeper);
         if (col.gameObject.tag == "ScoreCollectable")
-        {
-            Destroy(col.gameObject);
-            sK.AddScore(col);
+        {            
+            scoreKeeper.AddScore(col);
+			Destroy(col.gameObject);
         }
     }
 }

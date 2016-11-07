@@ -7,7 +7,7 @@ public class ScoreKeeping : MonoBehaviour
     public Text scoreText;
 
     private OrbInfo oI;
-    private int score = 100;
+    private int score;
 
     // Use this for initialization
     void Start ()
