@@ -37,8 +37,14 @@ public class GlideController : MonoBehaviour
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
     private Rigidbody rb;
-    private int score = 0;   
 
+    private Vector3 brakeVelocity;
+    public Vector3 BrakeVelocity
+    {
+        get { return brakeVelocity; }
+        set { brakeVelocity = value; }
+    }
+    
 	public float forwardSpeed = 0;
 
    // public LayerMask terrainLayer;
@@ -94,30 +100,13 @@ public class GlideController : MonoBehaviour
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
-        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
+        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity + brakeVelocity;
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
 
-        StartCoroutine(checkPos());
-    }
-
-    IEnumerator checkPos()
-    {
-        Vector3 originalPos = transform.position;
-        yield return new WaitForSeconds(1f);
-        Vector3 finalPos = transform.position;
-        //Debug.Log((finalPos - originalPos).magnitude);
-        if((finalPos - originalPos).magnitude < 5)
-        {
-            endGame();
-        }
-    }
-
-    void endGame()
-    {
-        Debug.Log("Game Ended");
+        
     }
 
     float Accelerate()
@@ -153,6 +142,7 @@ public class GlideController : MonoBehaviour
         {
             acceleration = maxVelocity;
         }
+        Mathf.Clamp(acceleration, minVelocity, maxVelocity);
         return acceleration;
     }
 
