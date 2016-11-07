@@ -37,6 +37,14 @@ public class GlideController : MonoBehaviour
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
     private Rigidbody rb;
+    private Brake brake;
+
+    private Vector3 diveVelocity;
+    public Vector3 DiveVelocity
+    {
+        get { return diveVelocity; }
+        set { diveVelocity = value; }
+    }
 
     private Vector3 brakeVelocity;
     public Vector3 BrakeVelocity
@@ -73,7 +81,7 @@ public class GlideController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //scoreKeeper = FindObjectOfType<ScoreKeeping>();
+        brake = GetComponent<Brake>();
         scoreKeeper = gameController.GetComponent<ScoreKeeping>();
 		acceleration = 50;
     }
@@ -93,14 +101,20 @@ public class GlideController : MonoBehaviour
 		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 75) / 85.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
 		forwardSpeed *= forwardSpeed; // squaring it to create a curved adjustment in speed
 		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip
-		angles.x += dipRate; // make it dip
+        if(brake.isBraking > 0.1f)
+        {
+            dipRate = 0;
+        }
+        angles.x += dipRate; // make it dip
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
 
-        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity + brakeVelocity;
+        Mathf.Clamp(acceleration, 0, maxVelocity);
+
+        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity + BrakeVelocity + DiveVelocity;
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
@@ -142,7 +156,7 @@ public class GlideController : MonoBehaviour
         {
             acceleration = maxVelocity;
         }
-        Mathf.Clamp(acceleration, minVelocity, maxVelocity);
+        Mathf.Clamp(acceleration, 0, maxVelocity);
         return acceleration;
     }
 

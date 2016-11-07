@@ -200,6 +200,7 @@ GameObject:
   - 114: {fileID: 204529537}
   - 114: {fileID: 204529543}
   - 114: {fileID: 204529544}
+  - 114: {fileID: 204529545}
   m_Layer: 0
   m_Name: Glider
   m_TagString: Player
@@ -355,6 +356,20 @@ MonoBehaviour:
   isBraking: 0
   brakePower: 50
   brakeCapacity: 100
+--- !u!114 &204529545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204529535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5f68291601bae4bb245a4d7c129d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDiving: 0
+  divePower: 50
+  diveCapacity: 100
 --- !u!1001 &241220153
 Prefab:
   m_ObjectHideFlags: 0

@@ -5,11 +5,13 @@ using System.Collections;
 public class Brake : MonoBehaviour
 {
     public float isBraking = 0;
-    public float brakePower = 10;
+    public float brakePower = 50;
     public float brakeCapacity = 100;
+    public float coolDownTime = 5;
 
     private float currentBrakeCapacity;
     private GlideController gc;
+    private bool coolingDown = false;
 
     // Use this for initialization
     void Start()
@@ -22,12 +24,20 @@ public class Brake : MonoBehaviour
     {
         InputDevice device = InputManager.ActiveDevice;
 
-        isBraking = device.RightStickY + Input.GetAxis("Fire1");
-
-        gc.BrakeVelocity = brakePower * -transform.forward * isBraking;
-        /*if(isBraking > 0.1f)
+        isBraking = (-device.RightStickY) + Input.GetAxis("Fire1");
+        
+        if(!coolingDown)
         {
-            gc.acceleration *= 0.5f;
-        }*/
+            gc.BrakeVelocity = brakePower * -transform.forward * isBraking;
+            coolingDown = true;
+        }
+        else
+        {
+            coolDownTime -= Time.deltaTime;
+            if(coolDownTime <= 0)
+            {
+                coolingDown = false;
+            }
+        }
     }
 }
