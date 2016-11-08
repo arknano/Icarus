@@ -37,21 +37,6 @@ public class GlideController : MonoBehaviour
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
     private Rigidbody rb;
-    private Brake brake;
-
-    private Vector3 diveVelocity;
-    public Vector3 DiveVelocity
-    {
-        get { return diveVelocity; }
-        set { diveVelocity = value; }
-    }
-
-    private Vector3 brakeVelocity;
-    public Vector3 BrakeVelocity
-    {
-        get { return brakeVelocity; }
-        set { brakeVelocity = value; }
-    }
     
 	public float forwardSpeed = 0;
 
@@ -81,7 +66,6 @@ public class GlideController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        brake = GetComponent<Brake>();
         scoreKeeper = gameController.GetComponent<ScoreKeeping>();
 		acceleration = 50;
     }
@@ -100,11 +84,7 @@ public class GlideController : MonoBehaviour
 		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
 		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 75) / 85.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
 		forwardSpeed *= forwardSpeed; // squaring it to create a curved adjustment in speed
-		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip
-        if(brake.isBraking > 0.1f)
-        {
-            dipRate = 0;
-        }
+		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip.
         angles.x += dipRate; // make it dip
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
@@ -114,7 +94,7 @@ public class GlideController : MonoBehaviour
 
         Mathf.Clamp(acceleration, 0, maxVelocity);
 
-        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity + BrakeVelocity + DiveVelocity;
+        rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
