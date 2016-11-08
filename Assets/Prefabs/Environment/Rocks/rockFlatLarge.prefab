@@ -25,7 +25,7 @@ GameObject:
   - 95: {fileID: 95000011817599086}
   m_Layer: 0
   m_Name: rockFlatLarge
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
