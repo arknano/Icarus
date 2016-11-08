@@ -28,7 +28,7 @@ public class Brake : MonoBehaviour
         
         if(!coolingDown)
         {
-            gc.BrakeVelocity = brakePower * -transform.forward * isBraking;
+            //gc.BrakeVelocity = brakePower * -transform.forward * isBraking;
             coolingDown = true;
         }
         else

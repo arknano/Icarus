@@ -24,6 +24,6 @@ public class Dive : MonoBehaviour {
 
         isDiving = device.RightTrigger + Input.GetAxis("Fire2");
 
-        gc.DiveVelocity = divePower * -transform.forward * isDiving;
+        //gc.DiveVelocity = divePower * -transform.forward * isDiving;
     }
 }
