@@ -37,8 +37,7 @@ public class GlideController : MonoBehaviour
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
     private Rigidbody rb;
-    private int score = 0;   
-
+    
 	public float forwardSpeed = 0;
 
    // public LayerMask terrainLayer;
@@ -67,7 +66,6 @@ public class GlideController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //scoreKeeper = FindObjectOfType<ScoreKeeping>();
         scoreKeeper = gameController.GetComponent<ScoreKeeping>();
 		acceleration = 50;
     }
@@ -86,13 +84,15 @@ public class GlideController : MonoBehaviour
 		forwardSpeed = Vector3.Dot(transform.forward, rb.velocity); // gets the forward velocity
 		forwardSpeed = 1.0f - Mathf.Clamp(forwardSpeed, 0, 75) / 85.0f; // clamps the speed value, subtracting 1 at the start reverses the angle adjustment curve by making it negative 1, dividing by 100 normalises it,
 		forwardSpeed *= forwardSpeed; // squaring it to create a curved adjustment in speed
-		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip
-		angles.x += dipRate; // make it dip
+		float dipRate = (forwardSpeed) * dipAnglesPerSecond * Time.deltaTime; // 200 = angles per second -- how much you dip.
+        angles.x += dipRate; // make it dip
 
 		angles.x = Mathf.Clamp(angles.x + vertical * turningSensitivity * Time.deltaTime, -60, 90); // up and down rotation with control stick
 		angles.y = angles.y + horizontal * turningSensitivity * Time.deltaTime; // left and right rotation
 		angles.z = Mathf.Clamp(angles.z + horizontal * -turningSensitivity * Time.deltaTime, -90, 90); // banking rotation 
         transform.eulerAngles = angles;
+
+        Mathf.Clamp(acceleration, 0, maxVelocity);
 
         rb.velocity = transform.forward * Accelerate() + BounceVelocity + WindVelocity + DashVelocity;
 
@@ -100,24 +100,7 @@ public class GlideController : MonoBehaviour
         BounceVelocity *= bounceDamping;
 		DashVelocity *= dashDamping;
 
-        StartCoroutine(checkPos());
-    }
-
-    IEnumerator checkPos()
-    {
-        Vector3 originalPos = transform.position;
-        yield return new WaitForSeconds(1f);
-        Vector3 finalPos = transform.position;
-        //Debug.Log((finalPos - originalPos).magnitude);
-        if((finalPos - originalPos).magnitude < 5)
-        {
-            endGame();
-        }
-    }
-
-    void endGame()
-    {
-        Debug.Log("Game Ended");
+        
     }
 
     float Accelerate()
@@ -153,6 +136,7 @@ public class GlideController : MonoBehaviour
         {
             acceleration = maxVelocity;
         }
+        Mathf.Clamp(acceleration, 0, maxVelocity);
         return acceleration;
     }
 
