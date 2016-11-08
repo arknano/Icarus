@@ -354,8 +354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBraking: 0
-  brakePower: 50
+  brakePower: 80
   brakeCapacity: 100
+  coolDownTime: 5
 --- !u!114 &204529545
 MonoBehaviour:
   m_ObjectHideFlags: 0
