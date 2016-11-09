@@ -9,6 +9,7 @@ TagManager:
   - ScoreCollectable
   - Yellow Orb
   - Obstacle
+  - OnPause
   layers:
   - Default
   - TransparentFX
