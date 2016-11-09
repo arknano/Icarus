@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000011686453864}
   - 114: {fileID: 114000013539467056}
   - 114: {fileID: 114000014015997860}
+  - 114: {fileID: 114000012992690334}
   m_Layer: 0
   m_Name: New Glider
   m_TagString: Player
@@ -282,9 +283,20 @@ MonoBehaviour:
   dashDamping: 0.9
   bounceDamping: 0.9
   windDamping: 0.9
-  dipAnglesPerSecond: 150
   gameController: {fileID: 0}
-  forwardSpeed: 0
+--- !u!114 &114000012992690334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012781015796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb00174dad0577459b72b5a18de181e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 3
+  healthTag: HealthPack
 --- !u!114 &114000013539467056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,3 +324,4 @@ MonoBehaviour:
   bounceIntensity: 110
   obstacleTag: Obstacle
   groundTag: Ground
+  damage: 1

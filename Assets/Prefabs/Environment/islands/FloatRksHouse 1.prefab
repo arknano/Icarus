@@ -287,9 +287,10 @@ GameObject:
   - 33: {fileID: 33000014097292544}
   - 23: {fileID: 23000012195926906}
   - 95: {fileID: 95000010931041512}
+  - 64: {fileID: 64000010884093934}
   m_Layer: 0
   m_Name: torii
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 1000013310826832}
   m_LocalRotation: {x: 0.018544538, y: 0.68625534, z: -0.017507292, w: -0.7269136}
   m_LocalPosition: {x: 0.8836281, y: 1.2615405, z: 7.7066646}
-  m_LocalScale: {x: 0.20019111, y: 0.24906811, z: 0.27027512}
+  m_LocalScale: {x: 0.29649505, y: 0.36888486, z: 0.4002937}
   m_LocalEulerAnglesHint: {x: 0, y: 95.581, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013197469298}
@@ -488,7 +489,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012625096602}
   m_LocalRotation: {x: -0, y: -0.9968385, z: -0, w: 0.07945435}
-  m_LocalPosition: {x: 52.109684, y: -38.600006, z: -245.58324}
+  m_LocalPosition: {x: 52.19, y: -38.600006, z: -245.58324}
   m_LocalScale: {x: 4, y: 6.450967, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: -171.123, z: 0}
   m_Children:
@@ -1124,6 +1125,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 9f48b0e6cd8ff1d42a2b327e46a22721, type: 3}
+--- !u!64 &64000010884093934
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013310826832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: edadeda858b5c0f49b14fc0dc91caaa2, type: 3}
 --- !u!64 &64000011535413002
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1427,7 +1440,7 @@ ParticleSystem:
   speed: 1
   randomSeed: 1111302376
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   moveWithTransform: 1
   scalingMode: 1
