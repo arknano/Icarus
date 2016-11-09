@@ -1475,6 +1475,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013277603560, guid: d1d3e1e579faf0b41b8a7d28be31bdd2,
     type: 2}
   m_PrefabInternal: {fileID: 611828498}
+--- !u!114 &184038868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184038863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c565c0ac09ed54d90f303d6ff25fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &197891415 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010696888600, guid: 4fc35c6ad80e14a4bbb8319de1eb98f3,
@@ -3863,7 +3874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1927009151}
-  positionOffset: 0.3
+  positionOffset: 0.15
   rotationOffset: 0.1
   minDistance: 1
   maxDistance: 10
@@ -5555,7 +5566,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   healthTag: HealthPack
-  currentLives: 0
 --- !u!1001 &722094974
 Prefab:
   m_ObjectHideFlags: 0
