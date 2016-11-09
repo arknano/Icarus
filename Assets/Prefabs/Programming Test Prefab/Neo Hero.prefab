@@ -260,7 +260,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65000011938784604
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -311,19 +311,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artificialGravity: 1
-  smooth: 1
   turningSensitivity: 45
-  readjustAngle: 10
-  readjustRate: 0.4
   acceleration: 30
   maxVelocity: 100
   upDeccelerate: 65
   downAccelerate: 50
-  yelOrb: {fileID: 4000013624029408, guid: 58ee5881d9325c045820ef729d1be298, type: 2}
-  scoreText: {fileID: 0}
-  terrainLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  dashDamping: 0.9
+  bounceDamping: 0.9
+  windDamping: 0.5
+  dipAnglesPerSecond: 200
+  gameController: {fileID: 0}
+  forwardSpeed: 0
 --- !u!114 &114000012437562028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,11 +333,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28f17e5b9b097048afecfcc96611244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 4000011342634862}
+  target: {fileID: 0}
   positionOffset: 0.1
   rotationOffset: 0.1
-  fallingRotation: 90
-  fallingPositionOffset: 30
+  minDistance: 1
+  maxDistance: 10
+  distance: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &114000012797522056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,9 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53069b0bca259a44eb3dea9b15885684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  dashIntensity: 60
   dashCooldown: 5
-  dashLeft: 0
 --- !u!124 &124000010672511912
 Behaviour:
   m_ObjectHideFlags: 1

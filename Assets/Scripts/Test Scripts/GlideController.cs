@@ -11,7 +11,7 @@ public class GlideController : MonoBehaviour
     public bool artificialGravity = true;
     [Tooltip("The speed at which the glider rotates.")]
     public float turningSensitivity = 45.0f;
-    [Tooltip("How fast the glider can accelerate.")]
+    [Tooltip("The current speed of the glider. Modifying this modifies the starting speed of the hero.")]
     public float acceleration = 30.0f;
     [Tooltip("The glider's max speed.")]
     public float maxVelocity = 100;
@@ -24,21 +24,17 @@ public class GlideController : MonoBehaviour
 	[Tooltip("Use a number between 0.9 and 0.01. The smaller the number, the quicker you slow down from bouncing off a collision.")]
 	public float bounceDamping = 0.9f;
 	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
-	public float windDamping = 0.5f;
-	[Tooltip("Use a number between 0.09 and 0.01. The smaller the number, the quicker you return to normal speed after touching wind currents.")]
-	public float dipAnglesPerSecond = 200.0f;
-//	[Tooltip("READ ONLY. To give a speed read out.")]
-//	public float speed = 0;
-
+	public float windDamping = 0.9f;
+	[Tooltip("Attach the Game Controller ")]
     public GameObject gameController;
 
+	private float dipAnglesPerSecond = 150.0f; // how fast the character dips down
 	private ScoreKeeping scoreKeeper;
 	private float smooth = 1.0f;
     private float minVelocity = 0; // The lowest possible flight speed.
     private Vector3 angles = Vector3.zero;
-    private Rigidbody rb;
-    
-	public float forwardSpeed = 0;
+    private Rigidbody rb;    
+	private float forwardSpeed = 0;
 
    // public LayerMask terrainLayer;
 	private Vector3 bounceVelocity;
@@ -98,9 +94,7 @@ public class GlideController : MonoBehaviour
 
         WindVelocity *= windDamping;
         BounceVelocity *= bounceDamping;
-		DashVelocity *= dashDamping;
-
-        
+		DashVelocity *= dashDamping;        
     }
 
     float Accelerate()
