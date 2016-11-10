@@ -1,15 +1,42 @@
 fileFormatVersion: 2
-guid: 9125994c38a2fbd46a5d7cda5985d1a6
-timeCreated: 1478648786
+guid: 6e331409dc617ac45af90262a8c7bd97
+timeCreated: 1478750200
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: LongWindow
+    100000: castleBase
+    100002: castleCornerRoof
+    100004: castleEdgeRoof
+    100006: castlePointRoof
+    100008: castleWalls
+    100010: castleWindows
+    100012: //RootNode
+    400000: castleBase
+    400002: castleCornerRoof
+    400004: castleEdgeRoof
+    400006: castlePointRoof
+    400008: castleWalls
+    400010: castleWindows
+    400012: //RootNode
+    2300000: castleBase
+    2300002: castleCornerRoof
+    2300004: castleEdgeRoof
+    2300006: castlePointRoof
+    2300008: castleWalls
+    2300010: castleWindows
+    3300000: castleBase
+    3300002: castleCornerRoof
+    3300004: castleEdgeRoof
+    3300006: castlePointRoof
+    3300008: castleWalls
+    3300010: castleWindows
+    4300000: castleWalls
+    4300002: castleBase
+    4300004: castleCornerRoof
+    4300006: castleEdgeRoof
+    4300008: castlePointRoof
+    4300010: castleWindows
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -35,7 +62,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
