@@ -145,13 +145,13 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.6862745, g: 0.3764706, b: 0.101960786, a: 1}
+      second: {r: 0.21323532, g: 0.12262294, b: 0.042333484, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _ReflectColor
-      second: {r: 0.35294116, g: 0.31836295, b: 0.17387542, a: 0.5}
+      second: {r: 0.33823532, g: 0.29117054, b: 0.094506934, a: 0.5}
     - first:
         name: _SpecColor
       second: {r: 1, g: 1, b: 1, a: 1}
