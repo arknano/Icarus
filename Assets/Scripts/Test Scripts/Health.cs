@@ -9,8 +9,14 @@ public class Health : MonoBehaviour
     private HealthPackValue hPV;
     private int currentLives;
 
-	// Use this for initialization
-	void Start ()
+    public int CurrentLives
+    {
+        get { return currentLives; }
+        set { currentLives = value; }
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         currentLives = maxLives;
 	}
