@@ -294,9 +294,10 @@ GameObject:
   - 193: {fileID: 193000010178204438}
   - 33: {fileID: 33000012747300740}
   - 23: {fileID: 23000011660732496}
+  - 65: {fileID: 65000011880736102}
   m_Layer: 0
   m_Name: Pink Tree
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,8 +942,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011784253146}
-  m_LocalRotation: {x: 0.024071345, y: -0.60710347, z: 0.031467207, w: -0.7936346}
-  m_LocalPosition: {x: -323.7, y: 1.7, z: -673}
+  m_LocalRotation: {x: 0.037523888, y: -0.94639, z: -0.0127111375, w: 0.32058766}
+  m_LocalPosition: {x: 345.67883, y: -27.692566, z: -227.75427}
   m_LocalScale: {x: 16.123116, y: 13.669704, z: 8.979775}
   m_LocalEulerAnglesHint: {x: 0, y: -284.861, z: -4.4110003}
   m_Children:
@@ -2638,6 +2639,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8922253, y: 1.0550632, z: 24.000011}
   m_Center: {x: -12.94611, y: 11.472469, z: 0.0000009536743}
+--- !u!65 &65000011880736102
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645454264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0753067, y: 4.439753, z: 2.564718}
+  m_Center: {x: -1.3505981, y: 2.6038718, z: -0.36754367}
 --- !u!65 &65000013159774166
 BoxCollider:
   m_ObjectHideFlags: 1
