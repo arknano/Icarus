@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000011301000556}
   - 23: {fileID: 23000012036070048}
   - 95: {fileID: 95000013524167712}
+  - 64: {fileID: 64000011859398160}
   m_Layer: 0
   m_Name: rockWallCover
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012316945646}
+  m_Mesh: {fileID: 4300000, guid: 6f52267595fb6a6469a3750e980bda67, type: 3}
+--- !u!64 &64000011859398160
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316945646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 6f52267595fb6a6469a3750e980bda67, type: 3}
 --- !u!95 &95000013524167712
 Animator:
