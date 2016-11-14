@@ -6,13 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    //public Canvas uI;
     public GameObject player;
 
-    /*public Sprite fullHealth;
-    public Sprite lowHealth;
-
-    //public Sprite F*/
+    public Sprite fullHealth, twoHealth, oneHealth, noHealth, happyFace, sadFace;
+    public Image Face, Hearts;
 
     private GameObject[] pausedObjects;
     private Health health; 
@@ -20,9 +17,7 @@ public class UIManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        //health = player.GetComponent<Health>();
-
-        
+        health = player.GetComponent<Health>();
 
         Time.timeScale = 1f;
         pausedObjects = GameObject.FindGameObjectsWithTag("OnPause");
@@ -86,14 +81,25 @@ public class UIManager : MonoBehaviour
 
     public void Health()
     {
-        /*if (health.CurrentLives >= 2)
+        if (health.CurrentLives == 3)
         {
-            uI.GetComponent<Image>().sprite = Resources.Load<Sprite>("boy_fullHealth");
+            Face.sprite = happyFace;
+            Hearts.sprite = fullHealth;
         }
-        else if (health.CurrentLives <= 1)
+        if (health.CurrentLives == 2)
         {
-            uI.GetComponent<Image>().sprite = Resources.Load<Sprite>("boy_lowHealth");
-            Debug.Log("Low Health");
-        }*/
+            Face.sprite = happyFace;
+            Hearts.sprite = twoHealth;
+        }
+        if (health.CurrentLives == 1)
+        {
+            Face.sprite = sadFace;
+            Hearts.sprite = oneHealth;
+        }
+        if (health.CurrentLives == 0)
+        {
+            Face.sprite = sadFace;
+            Hearts.sprite = noHealth;
+        }
     }
 }
