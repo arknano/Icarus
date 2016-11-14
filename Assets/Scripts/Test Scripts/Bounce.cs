@@ -43,7 +43,8 @@ public class Bounce : MonoBehaviour
 		else if (collision.gameObject.tag == obstacleTag)
 		{
 			glide.BounceVelocity = bounceIntensity * Vector3.Reflect(glide.transform.forward, collision.contacts[0].normal);
-			glide.acceleration *= 0.5f;	
-		}	
+			glide.acceleration *= 0.5f;
+            h.TakeDamage(damage);
+        }	
 	}
 }
