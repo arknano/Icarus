@@ -2,14 +2,28 @@
 using InControl;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    //public Canvas uI;
+    public GameObject player;
+
+    /*public Sprite fullHealth;
+    public Sprite lowHealth;
+
+    //public Sprite F*/
+
     private GameObject[] pausedObjects;
+    private Health health; 
 
     // Use this for initialization
     void Start ()
     {
+        //health = player.GetComponent<Health>();
+
+        
+
         Time.timeScale = 1f;
         pausedObjects = GameObject.FindGameObjectsWithTag("OnPause");
         HidePaused();
@@ -35,6 +49,7 @@ public class UIManager : MonoBehaviour
                 HidePaused();
             }
         }
+        Health();
     }
 
     public void Reload()
@@ -67,5 +82,18 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Health()
+    {
+        /*if (health.CurrentLives >= 2)
+        {
+            uI.GetComponent<Image>().sprite = Resources.Load<Sprite>("boy_fullHealth");
+        }
+        else if (health.CurrentLives <= 1)
+        {
+            uI.GetComponent<Image>().sprite = Resources.Load<Sprite>("boy_lowHealth");
+            Debug.Log("Low Health");
+        }*/
     }
 }
