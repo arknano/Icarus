@@ -57,4 +57,15 @@ public class UIManager : MonoBehaviour
             g.SetActive(false);
         }
     }
+
+    public void RestartLevel()
+    {
+        Debug.Log("Pressed");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
