@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         currentLives -= damage;
         if(currentLives <= 0)
         {
-            //End
+            Time.timeScale = 0;
         }
     }
 }
