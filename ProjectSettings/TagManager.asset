@@ -12,6 +12,7 @@ TagManager:
   - OnPause
   - HealthPack
   - OnGameOver
+  - PauseOnly
   layers:
   - Default
   - TransparentFX
