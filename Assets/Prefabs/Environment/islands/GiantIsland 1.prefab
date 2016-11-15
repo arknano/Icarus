@@ -114,7 +114,7 @@ GameObject:
   - 65: {fileID: 65000011349504676}
   m_Layer: 0
   m_Name: buildingFoundation
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +257,7 @@ GameObject:
   - 64: {fileID: 64000010794170784}
   m_Layer: 0
   m_Name: buildingRoof
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -707,10 +707,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010534840838}
-  m_LocalRotation: {x: -0, y: -0.052790493, z: -0, w: 0.99860567}
-  m_LocalPosition: {x: -56.373, y: -61, z: 133}
+  m_LocalRotation: {x: -0, y: 0.024616659, z: -0, w: 0.999697}
+  m_LocalPosition: {x: 307.4, y: -9.0859375, z: -557.3}
   m_LocalScale: {x: 7.6628866, y: 7.6628876, z: 7.6628876}
-  m_LocalEulerAnglesHint: {x: -5.287, y: -5.8830004, z: -6.537}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.739, z: 0}
   m_Children:
   - {fileID: 4000012471235206}
   - {fileID: 4000012455910326}
@@ -1566,7 +1566,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011546291678}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
@@ -1686,7 +1686,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011045531466}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8922253, y: 1.0550632, z: 24.000011}
@@ -1698,7 +1698,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010595261814}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 24, y: 12.000002, z: 24}
