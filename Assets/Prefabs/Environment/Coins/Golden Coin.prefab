@@ -23,10 +23,9 @@ GameObject:
   - 23: {fileID: 23000013331213436}
   - 95: {fileID: 95000013253733770}
   - 114: {fileID: 114000010811079286}
-  - 54: {fileID: 54000011940942336}
-  - 64: {fileID: 64000011565191694}
   - 114: {fileID: 114000012440414744}
-  m_Layer: 0
+  - 65: {fileID: 65000013302227794}
+  m_Layer: 11
   m_Name: Golden Coin
   m_TagString: ScoreCollectable
   m_Icon: {fileID: 0}
@@ -40,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013628262894}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2439.7366, y: 1362.4833, z: 2603.588}
+  m_LocalPosition: {x: 159.5, y: 430, z: -682}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
@@ -82,23 +81,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013628262894}
   m_Mesh: {fileID: 4300000, guid: 48af144e2af70be42bd4f96c7bcce85f, type: 3}
---- !u!54 &54000011940942336
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013628262894}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &64000011565191694
-MeshCollider:
+--- !u!65 &65000013302227794
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -107,8 +91,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 48af144e2af70be42bd4f96c7bcce85f, type: 3}
+  m_Size: {x: 1.9924269, y: 0.104829185, z: 1.9924275}
+  m_Center: {x: 0, y: 0.052414592, z: 3.7242808e-16}
 --- !u!95 &95000013253733770
 Animator:
   serializedVersion: 3

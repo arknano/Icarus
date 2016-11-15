@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011988686876}
   - 108: {fileID: 108000010668089910}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,9 +39,9 @@ GameObject:
   - 23: {fileID: 23000011896969510}
   - 95: {fileID: 95000010415565376}
   - 114: {fileID: 114000012641382862}
-  - 64: {fileID: 64000012254011552}
   - 114: {fileID: 114000012177575360}
-  m_Layer: 0
+  - 65: {fileID: 65000011862365534}
+  m_Layer: 11
   m_Name: gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - 4: {fileID: 4000012960498588}
   - 198: {fileID: 198000013556160130}
   - 199: {fileID: 199000012552786276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 33: {fileID: 33000012792783196}
   - 23: {fileID: 23000013649146472}
   - 95: {fileID: 95000014075402590}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: gem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,8 +128,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010905614304}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3645029, y: 0.3642416, z: -0.71713924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -776.5518, y: 515.24, z: 552.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -210,8 +210,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011941833354}
   m_Mesh: {fileID: 4300000, guid: 4b296ccf8c31dd946bcecb8982d261a7, type: 3}
---- !u!64 &64000012254011552
-MeshCollider:
+--- !u!65 &65000011862365534
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -220,8 +220,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 4b296ccf8c31dd946bcecb8982d261a7, type: 3}
+  m_Size: {x: 5.103905, y: 5.103905, z: 5.103905}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95000010415565376
 Animator:
   serializedVersion: 3
