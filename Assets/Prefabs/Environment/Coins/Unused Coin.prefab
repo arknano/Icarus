@@ -27,7 +27,7 @@ GameObject:
   - 114: {fileID: 114000014172732750}
   - 64: {fileID: 64000011770991028}
   m_Layer: 0
-  m_Name: Gold Coin
+  m_Name: Unused Coin
   m_TagString: ScoreCollectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

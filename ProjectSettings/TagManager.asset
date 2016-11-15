@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - OnPause
   - HealthPack
+  - OnGameOver
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - 
   - Player
   - Decaled
-  - 
+  - OnGameOver
   - 
   - 
   - 
