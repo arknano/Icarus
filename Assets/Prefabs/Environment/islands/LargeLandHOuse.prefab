@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000012385960372}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ GameObject:
   - 4: {fileID: 4000011216859182}
   m_Layer: 0
   m_Name: LargeLandHOuse
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1154,8 +1154,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7770706, y: 7.325539, z: 1.1779113}
-  m_Center: {x: 0.5911111, y: 3.8332736, z: -0.20785576}
+  m_Size: {x: 0.28781042, y: 6.815343, z: 1.1779113}
+  m_Center: {x: 0.57799613, y: 3.5763178, z: -0.18231174}
 --- !u!65 &65000012221271932
 BoxCollider:
   m_ObjectHideFlags: 1

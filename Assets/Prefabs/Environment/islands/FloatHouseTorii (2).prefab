@@ -205,7 +205,7 @@ GameObject:
   - 4: {fileID: 4000011837332580}
   m_Layer: 0
   m_Name: FloatHouseTorii (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1219,8 +1219,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1607997, y: 5.2737627, z: 1.8335906}
-  m_Center: {x: -1.4633269, y: 2.4569461, z: -0.27938345}
+  m_Size: {x: 0.5528978, y: 4.045354, z: 1.8335906}
+  m_Center: {x: -1.4862643, y: 1.8418757, z: -0.26470265}
 --- !u!95 &95000010414708982
 Animator:
   serializedVersion: 3

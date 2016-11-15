@@ -131,7 +131,7 @@ GameObject:
   - 4: {fileID: 4000010155747576}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,7 +276,7 @@ GameObject:
   - 4: {fileID: 4000013197469298}
   m_Layer: 0
   m_Name: FloatRksHouse 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,8 +438,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010761120242}
   m_LocalRotation: {x: -0.04329741, y: 0.8294806, z: 0.019550513, w: -0.5565116}
-  m_LocalPosition: {x: 5.075833, y: -0.6401581, z: 9.595825}
-  m_LocalScale: {x: 0.2148221, y: 0.13438539, z: 0.21551903}
+  m_LocalPosition: {x: 5.49, y: -0.66, z: 10.34}
+  m_LocalScale: {x: 0.16349481, y: 0.10227679, z: 0.16402522}
   m_LocalEulerAnglesHint: {x: 0.89300007, y: 77.086006, z: -5.2190003}
   m_Children:
   - {fileID: 4000012851904910}
@@ -525,7 +525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012694437442}
   m_LocalRotation: {x: 0.1030002, y: 0.06560999, z: -0.06379305, w: 0.9904629}
-  m_LocalPosition: {x: -4.52, y: 1.15, z: 0.401}
+  m_LocalPosition: {x: -3.648, y: 0.966, z: 1.104}
   m_LocalScale: {x: 0.26286963, y: 0.22334515, z: 0.11828883}
   m_LocalEulerAnglesHint: {x: 12.207001, y: 6.6770005, z: -366.448}
   m_Children: []
@@ -551,7 +551,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010698696396}
   m_LocalRotation: {x: -0.54961824, y: -0.34681404, z: 0.36472052, w: 0.6667974}
-  m_LocalPosition: {x: -2.61, y: 0.92, z: 0.2}
+  m_LocalPosition: {x: -0.92, y: 2.05, z: 1.21}
   m_LocalScale: {x: 2.234483, y: 1.33376, z: 1.7765492}
   m_LocalEulerAnglesHint: {x: 0, y: 196.06999, z: 0}
   m_Children:
@@ -656,9 +656,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012625096602}
-  m_LocalRotation: {x: 0.00054430723, y: -0.99944705, z: 0.025497232, w: 0.0213359}
-  m_LocalPosition: {x: 45.7, y: -53.6, z: 358.3}
-  m_LocalScale: {x: 8.822, y: 14.227608, z: 8.822}
+  m_LocalRotation: {x: -0.0011329114, y: -0.9986879, z: 0.025477866, w: -0.044408146}
+  m_LocalPosition: {x: -19, y: -13, z: -247}
+  m_LocalScale: {x: 8.822001, y: 14.22761, z: 8.822006}
   m_LocalEulerAnglesHint: {x: -2.4510002, y: -325.238, z: -1.508}
   m_Children:
   - {fileID: 4000013936855352}
@@ -685,10 +685,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010002127450}
-  m_LocalRotation: {x: -0.4853491, y: -0.4140646, z: 0.4393991, w: -0.63238853}
-  m_LocalPosition: {x: -2.539, y: -0.234, z: -6.531}
+  m_LocalRotation: {x: -0.40763786, y: -0.46285033, z: 0.3876733, w: -0.68506235}
+  m_LocalPosition: {x: -4.01, y: -0.29, z: -6.25}
   m_LocalScale: {x: 0.51634794, y: 0.5163478, z: 0.5163474}
-  m_LocalEulerAnglesHint: {x: -257.864, y: 207.508, z: 132.926}
+  m_LocalEulerAnglesHint: {x: -246.526, y: 232.801, z: 157.498}
   m_Children:
   - {fileID: 4000011619454880}
   - {fileID: 4000011544417158}
@@ -1603,8 +1603,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55578, y: 1.4620043, z: 2.1207824}
-  m_Center: {x: -1.0499781, y: 0.5504073, z: -0.12084806}
+  m_Size: {x: 2.1338215, y: 1.073989, z: 1.1276733}
+  m_Center: {x: -0.85975134, y: 0.753217, z: 0.35594678}
 --- !u!65 &65000013170576204
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1615,8 +1615,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1607997, y: 5.2737627, z: 1.8335906}
-  m_Center: {x: -1.4633269, y: 2.4569461, z: -0.27938345}
+  m_Size: {x: 0.30464607, y: 3.6558492, z: 1.0174263}
+  m_Center: {x: -1.6651324, y: 2.288177, z: -0.67066574}
 --- !u!65 &65000013386655704
 BoxCollider:
   m_ObjectHideFlags: 1
