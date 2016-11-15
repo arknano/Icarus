@@ -10,6 +10,7 @@ TagManager:
   - Yellow Orb
   - Obstacle
   - OnPause
+  - HealthPack
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - Player
-  - Ground
+  - Decaled
   - 
   - 
   - 

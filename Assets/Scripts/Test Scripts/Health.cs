@@ -35,4 +35,26 @@ public class Health : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "HealthPack")
+        {
+            AddHealth(hPV.healthPackValue);
+            Destroy(col.gameObject);
+        }
+    }
+
+    public void AddHealth(int health)
+    {
+        if(!(currentLives >= maxLives))
+        {
+            currentLives += health;
+        }
+        else if(currentLives >= maxLives)
+        {
+            currentLives = maxLives;
+        }
+             
+    }
 }
