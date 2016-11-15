@@ -30,7 +30,6 @@ public class Bounce : MonoBehaviour
 			{
 				Debug.Log("You died.");
                 h.TakeDamage(h.maxLives);
-				Time.timeScale = 0;
 			}
 			else if (collision.contacts[0].normal.y < 0.4f)
 			{
