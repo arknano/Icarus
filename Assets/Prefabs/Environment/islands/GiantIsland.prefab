@@ -311,7 +311,7 @@ GameObject:
   - 4: {fileID: 4000013902033822}
   m_Layer: 0
   m_Name: HouseExample (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,7 +421,7 @@ GameObject:
   - 4: {fileID: 4000013189355558}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2192,8 +2192,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.97505796, y: 3.8607752, z: 1.7954669}
-  m_Center: {x: 0.006966813, y: 1.9302624, z: -0.25704247}
+  m_Size: {x: 0.7075164, y: 3.2570221, z: 0.3949426}
+  m_Center: {x: -0.12771246, y: 1.6283685, z: -0.07534631}
 --- !u!65 &65000011822284628
 BoxCollider:
   m_ObjectHideFlags: 1
