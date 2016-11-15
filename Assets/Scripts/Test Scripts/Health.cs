@@ -30,10 +30,6 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentLives -= damage;
-        if(currentLives <= 0)
-        {
-            Time.timeScale = 0;
-        }
     }
 
     void OnTriggerEnter(Collider col)

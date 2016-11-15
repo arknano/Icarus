@@ -37,9 +37,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012283179200}
   - 95: {fileID: 95000013576121556}
+  - 64: {fileID: 64000010570390928}
   m_Layer: 0
   m_Name: torii
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,10 +94,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012556706068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0049243863, y: 0.06554954, z: 0.07475153, w: 0.9950333}
+  m_LocalPosition: {x: 198.1, y: -14.5, z: -11.6}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalEulerAnglesHint: {x: 0, y: 7.333, z: 8.365001}
   m_Children:
   - {fileID: 4000010346122662}
   - {fileID: 4000010844482626}
@@ -145,7 +146,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 3a10ce1ec497a09458b7f1712d2345e9, type: 2}
-  - {fileID: 2100000, guid: 55f517a6fa9a28743b96882e147b1c38, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -175,6 +176,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010536555620}
   m_Mesh: {fileID: 4300000, guid: 02a6e44f500eefa43a9dc5678fcb637e, type: 3}
+--- !u!64 &64000010570390928
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012556706068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!95 &95000013576121556
 Animator:
   serializedVersion: 3

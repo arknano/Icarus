@@ -1044,7 +1044,7 @@ ParticleSystem:
   ForceModule:
     enabled: 1
     x:
-      scalar: 0.06
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1079,7 +1079,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     y:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
