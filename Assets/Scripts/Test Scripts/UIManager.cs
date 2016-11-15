@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     private GameObject[] gameOverObjects;
     private GameObject[] pausedObjects;
+    private GameObject[] pausedOnlyObjects;
     private Blur blur;
     private Health health;
    
@@ -28,28 +29,28 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         pausedObjects = GameObject.FindGameObjectsWithTag("OnPause");
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOver");
+        pausedOnlyObjects = GameObject.FindGameObjectsWithTag("PauseOnly");
         HidePaused();
         HideGameOver();
-        
+        HidePausedOnly();
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        Debug.Log("HI");
-
         device = InputManager.ActiveDevice;
 
         if (device.MenuWasPressed || Input.GetKeyDown(KeyCode.Escape)) 
         { 
-            Debug.Log("working");
             if (Time.timeScale == 1)
             { 
                 ShowPaused();
+                ShowPausedOnly();
             }
             else if(Time.timeScale == 0)
             {
                 HidePaused();
+                HidePausedOnly();
             }
         }
         Health();
@@ -79,9 +80,26 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void ShowPausedOnly()
+    {
+        foreach (GameObject g in pausedOnlyObjects)
+        {
+            g.SetActive(true);
+        }
+        Time.timeScale = 0;
+    }
+
+    public void HidePausedOnly()
+    {
+        foreach (GameObject g in pausedOnlyObjects)
+        {
+            g.SetActive(false);
+        }
+        Time.timeScale = 1;
+    }
+
     public void RestartLevel()
     {
-        Debug.Log("Pressed");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
