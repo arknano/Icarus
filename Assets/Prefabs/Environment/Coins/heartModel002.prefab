@@ -57,6 +57,7 @@ GameObject:
   - 95: {fileID: 95000012078486514}
   - 114: {fileID: 114000012751269714}
   - 114: {fileID: 114000013273426628}
+  - 64: {fileID: 64000013671588232}
   m_Layer: 0
   m_Name: heartModel002
   m_TagString: HealthPack
@@ -170,6 +171,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013779395504}
+  m_Mesh: {fileID: 4300000, guid: a7a35d6a3a1901c44914993c68186b0e, type: 3}
+--- !u!64 &64000013671588232
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013779395504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: a7a35d6a3a1901c44914993c68186b0e, type: 3}
 --- !u!95 &95000012078486514
 Animator:

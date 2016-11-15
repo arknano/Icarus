@@ -34,8 +34,10 @@ public class Health : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("Collided");
         if (col.gameObject.tag == "HealthPack")
         {
+            hPV = col.gameObject.GetComponent<HealthPackValue>();
             AddHealth(hPV.healthPackValue);
             Destroy(col.gameObject);
         }
