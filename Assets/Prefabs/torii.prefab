@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000012556706068}
   m_IsPrefabParent: 1
+--- !u!1 &1000010536555620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010844482626}
+  - 33: {fileID: 33000012820912892}
+  - 23: {fileID: 23000013236500636}
+  m_Layer: 0
+  m_Name: polySurface3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000012556706068
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,35 +36,79 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012283179200}
-  - 33: {fileID: 33000012549616444}
-  - 23: {fileID: 23000011137180530}
   - 95: {fileID: 95000013576121556}
+  - 64: {fileID: 64000010570390928}
   m_Layer: 0
   m_Name: torii
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013686553836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010346122662}
+  - 33: {fileID: 33000010633505600}
+  - 23: {fileID: 23000011798660358}
+  m_Layer: 0
+  m_Name: pCylinder14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4000010346122662
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013686553836}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012283179200}
+  m_RootOrder: 0
+--- !u!4 &4000010844482626
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010536555620}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7169416, y: 23.80675, z: 3.5712132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012283179200}
+  m_RootOrder: 1
 --- !u!4 &4000012283179200
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012556706068}
-  m_LocalRotation: {x: -0, y: 0.9982851, z: -0, w: 0.058539893}
-  m_LocalPosition: {x: -0.058240198, y: 1.97125, z: 0.19123685}
-  m_LocalScale: {x: 0.16600509, y: 0.16666667, z: 0.11889568}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
+  m_LocalRotation: {x: 0.0049243863, y: 0.06554954, z: 0.07475153, w: 0.9950333}
+  m_LocalPosition: {x: 198.1, y: -14.5, z: -11.6}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalEulerAnglesHint: {x: 0, y: 7.333, z: 8.365001}
+  m_Children:
+  - {fileID: 4000010346122662}
+  - {fileID: 4000010844482626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000011137180530
+--- !u!23 &23000011798660358
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012556706068}
+  m_GameObject: {fileID: 1000013686553836}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -55,7 +116,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b541b06f18518354883c380963b92fa8, type: 2}
+  - {fileID: 2100000, guid: 1b9df5a784f626346b250196be0cd207, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -71,13 +132,62 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000012549616444
+--- !u!23 &23000013236500636
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010536555620}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 3a10ce1ec497a09458b7f1712d2345e9, type: 2}
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000010633505600
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013686553836}
+  m_Mesh: {fileID: 4300002, guid: 02a6e44f500eefa43a9dc5678fcb637e, type: 3}
+--- !u!33 &33000012820912892
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010536555620}
+  m_Mesh: {fileID: 4300000, guid: 02a6e44f500eefa43a9dc5678fcb637e, type: 3}
+--- !u!64 &64000010570390928
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012556706068}
-  m_Mesh: {fileID: 4300000, guid: edadeda858b5c0f49b14fc0dc91caaa2, type: 3}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!95 &95000013576121556
 Animator:
   serializedVersion: 3
@@ -86,7 +196,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012556706068}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: edadeda858b5c0f49b14fc0dc91caaa2, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 02a6e44f500eefa43a9dc5678fcb637e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
