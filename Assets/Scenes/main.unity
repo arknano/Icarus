@@ -161,7 +161,7 @@ GameObject:
   - 114: {fileID: 360525587}
   - 114: {fileID: 360525586}
   - 64: {fileID: 360525591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Glider
   m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360525584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.8, y: 615, z: -744}
+  m_LocalPosition: {x: 18.8, y: 615, z: -4359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artificialGravity: 1
-  turningSensitivity: 50
+  turningSensitivity: 30
   acceleration: 50
   maxVelocity: 100
   upDeccelerate: 65
@@ -788,7 +788,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 85.336006, y: 57.307003, z: 53.995003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &1927009151
 Transform:
   m_ObjectHideFlags: 0
@@ -816,11 +816,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012735205600, guid: 7dbc9d12901f27049a926ba77acd43f4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 393
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 4000012735205600, guid: 7dbc9d12901f27049a926ba77acd43f4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -4.83
+      value: -4130
       objectReference: {fileID: 0}
     - target: {fileID: 4000012735205600, guid: 7dbc9d12901f27049a926ba77acd43f4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -840,7 +840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012735205600, guid: 7dbc9d12901f27049a926ba77acd43f4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000012030064522, guid: 7dbc9d12901f27049a926ba77acd43f4,
         type: 2}
@@ -851,6 +851,16 @@ Prefab:
         type: 2}
       propertyPath: positionOffset
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010331217848, guid: 7dbc9d12901f27049a926ba77acd43f4,
+        type: 2}
+      propertyPath: far clip plane
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010331217848, guid: 7dbc9d12901f27049a926ba77acd43f4,
+        type: 2}
+      propertyPath: near clip plane
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7dbc9d12901f27049a926ba77acd43f4, type: 2}
