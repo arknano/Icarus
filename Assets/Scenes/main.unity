@@ -94,7 +94,7 @@ NavMeshSettings:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010988569296, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
     type: 2}
-  m_PrefabInternal: {fileID: 1618225185}
+  m_PrefabInternal: {fileID: 1275795440}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &229579449
 GameObject:
@@ -306,7 +306,7 @@ MeshFilter:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011051951868, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
     type: 2}
-  m_PrefabInternal: {fileID: 1618225185}
+  m_PrefabInternal: {fileID: 1275795440}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &728607101
 GameObject:
@@ -406,7 +406,7 @@ MonoBehaviour:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013450097090, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
     type: 2}
-  m_PrefabInternal: {fileID: 1618225185}
+  m_PrefabInternal: {fileID: 1275795440}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &913628740
 GameObject:
@@ -468,13 +468,13 @@ MeshFilter:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011344183118, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
     type: 2}
-  m_PrefabInternal: {fileID: 1618225185}
+  m_PrefabInternal: {fileID: 1275795440}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1046609823 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011404781882, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
     type: 2}
-  m_PrefabInternal: {fileID: 1618225185}
+  m_PrefabInternal: {fileID: 1275795440}
 --- !u!1 &1188542427
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1001 &1618225185
+--- !u!1001 &1275795440
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -638,52 +638,24 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000011902625962, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
-      propertyPath: m_Name
-      value: 'Basic UI '
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012230736314, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
+    - target: {fileID: 114000014253803434, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 728607102}
     - target: {fileID: 114000012230736314, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 728607102}
     - target: {fileID: 114000010643340526, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 728607106}
-    - target: {fileID: 114000010643340526, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014253803434, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 728607102}
-    - target: {fileID: 114000014253803434, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HidePaused
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013460393090, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
+    - target: {fileID: 1000011902625962, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
       propertyPath: m_Name
-      value: MenuButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012542376962, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
-        type: 2}
-      propertyPath: m_Text
-      value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011404781882, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
-      propertyPath: m_TagString
-      value: PauseOnly
+      value: 'Basic UI '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
