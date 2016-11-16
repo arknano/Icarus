@@ -25,10 +25,10 @@ GameObject:
   - 64: {fileID: 64000014097102724}
   m_Layer: 0
   m_Name: FloatITunnel 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000012986148500
 GameObject:
@@ -45,10 +45,10 @@ GameObject:
   - 64: {fileID: 64000012140102110}
   m_Layer: 0
   m_Name: FoatTunnel_Small
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000011503741516
 Transform:
@@ -56,8 +56,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011914754330}
-  m_LocalRotation: {x: -0.104578964, y: -0.9914182, z: 0.018701155, w: -0.07618106}
-  m_LocalPosition: {x: 214.9, y: 28.7, z: -510.6}
+  m_LocalRotation: {x: 0.066594616, y: -0.57091665, z: -0.03752434, w: 0.81744194}
+  m_LocalPosition: {x: -74.8, y: -13.3, z: -99.6}
   m_LocalScale: {x: 21.375544, y: 16.092253, z: 16.546469}
   m_LocalEulerAnglesHint: {x: 3.0100002, y: -188.249, z: 11.536}
   m_Children:
