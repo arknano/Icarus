@@ -26,6 +26,6 @@ public class ScoreKeeping : MonoBehaviour
         oI = col.gameObject.GetComponent<OrbInfo>();
         score += oI.orbValue;
         scoreText.text = "Score: " + score;
-        Debug.Log(score);
+        //Debug.Log(score);
     }
 }
