@@ -24,7 +24,6 @@ GameObject:
   - 23: {fileID: 23000011642473158}
   - 54: {fileID: 54000012011513862}
   - 114: {fileID: 114000011686453864}
-  - 114: {fileID: 114000013539467056}
   - 114: {fileID: 114000014015997860}
   - 114: {fileID: 114000012992690334}
   m_Layer: 0
@@ -297,19 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   healthTag: HealthPack
---- !u!114 &114000013539467056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012781015796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53069b0bca259a44eb3dea9b15885684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashIntensity: 60
-  dashCooldown: 70
+  currentLives: 0
 --- !u!114 &114000014015997860
 MonoBehaviour:
   m_ObjectHideFlags: 1
