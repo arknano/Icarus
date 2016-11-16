@@ -140,6 +140,7 @@ public class GlideController : MonoBehaviour
         {            
             scoreKeeper.AddScore(col);
 			Destroy(col.gameObject);
+			//col.gameObject.activeSelf = false; // work out how to deactivate the coin instead of deleting it
         }
     }
 }
