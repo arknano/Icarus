@@ -57,7 +57,7 @@ GameObject:
   - 4: {fileID: 4000012665802302}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - 4: {fileID: 4000012259223774}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,6 +295,7 @@ GameObject:
   - 33: {fileID: 33000012747300740}
   - 23: {fileID: 23000011660732496}
   - 65: {fileID: 65000011880736102}
+  - 65: {fileID: 65000013579186294}
   m_Layer: 0
   m_Name: Pink Tree
   m_TagString: Obstacle
@@ -312,7 +313,7 @@ GameObject:
   - 4: {fileID: 4000011619372928}
   m_Layer: 0
   m_Name: FloatRksHouse 1 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2649,8 +2650,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0753067, y: 4.439753, z: 2.564718}
-  m_Center: {x: -1.3505981, y: 2.6038718, z: -0.36754367}
+  m_Size: {x: 3.009482, y: 1.1819688, z: 1.9798049}
+  m_Center: {x: -0.7964748, y: 0.4677184, z: 0.112995796}
 --- !u!65 &65000013159774166
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2675,6 +2676,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24, y: 12.000002, z: 24}
   m_Center: {x: 0, y: 6.000001, z: 0.00000047683716}
+--- !u!65 &65000013579186294
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645454264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.685387, y: 4.339453, z: 0.6934461}
+  m_Center: {x: -1.6274322, y: 1.999795, z: -0.76209897}
 --- !u!95 &95000010022398152
 Animator:
   serializedVersion: 3

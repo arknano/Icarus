@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     public string healthTag = "HealthPack";
 
     private HealthPackValue hPV;
-    private int currentLives;
+    public int currentLives;
 
     public int CurrentLives
     {
@@ -30,9 +30,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentLives -= damage;
-        if(currentLives <= 0)
+        if (currentLives <= 0)
         {
-            Time.timeScale = 0;
+            currentLives = 0;
         }
     }
 
@@ -40,6 +40,7 @@ public class Health : MonoBehaviour
     {
         if (col.gameObject.tag == "HealthPack")
         {
+            hPV = col.gameObject.GetComponent<HealthPackValue>();
             AddHealth(hPV.healthPackValue);
             Destroy(col.gameObject);
         }
@@ -54,7 +55,6 @@ public class Health : MonoBehaviour
         else if(currentLives >= maxLives)
         {
             currentLives = maxLives;
-        }
-             
+        }             
     }
 }

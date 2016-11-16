@@ -333,7 +333,7 @@ GameObject:
   - 4: {fileID: 4000013062225480}
   m_Layer: 0
   m_Name: HouseExample
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,7 +592,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010509317194}
-  m_LocalRotation: {x: 0.15625991, y: -0.24693075, z: 0.80858654, w: 0.5106816}
+  m_LocalRotation: {x: 0.15625992, y: -0.24693078, z: 0.80858666, w: 0.5106817}
   m_LocalPosition: {x: 2.574, y: 2.47, z: 3.477}
   m_LocalScale: {x: 0.17392425, y: 0.20336461, z: 0.24066122}
   m_LocalEulerAnglesHint: {x: 33.972, y: 0.033, z: 115.30401}
@@ -632,10 +632,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011305459982}
-  m_LocalRotation: {x: 0.048702657, y: 0.9623491, z: 0.0814706, w: -0.2547055}
-  m_LocalPosition: {x: -530, y: 1, z: 373}
-  m_LocalScale: {x: 23.047955, y: 24.953932, z: 28.37131}
-  m_LocalEulerAnglesHint: {x: -10.408001, y: 209.361, z: 2.956}
+  m_LocalRotation: {x: 0.056203432, y: 0.9821541, z: 0.07648909, w: -0.16237006}
+  m_LocalPosition: {x: 105.100006, y: -54.276978, z: -54.199997}
+  m_LocalScale: {x: 5.0490427, y: 5.466577, z: 6.215213}
+  m_LocalEulerAnglesHint: {x: -9.645, y: 198.04999, z: 4.8380003}
   m_Children:
   - {fileID: 4000013062225480}
   - {fileID: 4000011665423240}
@@ -1973,8 +1973,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8687574, y: 10.396195, z: 0.89086545}
-  m_Center: {x: 0.071504734, y: 5.2646923, z: -0.48005253}
+  m_Size: {x: 0.50236845, y: 10.396195, z: 0.8908657}
+  m_Center: {x: -0.17968084, y: 5.2503815, z: -0.52118915}
 --- !u!65 &65000011588893034
 BoxCollider:
   m_ObjectHideFlags: 1

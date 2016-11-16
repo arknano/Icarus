@@ -25,10 +25,10 @@ GameObject:
   - 64: {fileID: 64000012563193272}
   m_Layer: 0
   m_Name: FloatITunnel side
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000013299550540
 GameObject:
@@ -44,10 +44,10 @@ GameObject:
   - 64: {fileID: 64000011290454990}
   m_Layer: 0
   m_Name: FoatTunnel_Small
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000010004653936
 Transform:
@@ -55,10 +55,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010423971208}
-  m_LocalRotation: {x: 0.44332972, y: -0.7722009, z: -0.25578123, w: 0.37648442}
-  m_LocalPosition: {x: 375.20004, y: 508.41327, z: -1081.4185}
-  m_LocalScale: {x: 18.263391, y: 14.137406, z: 14.137399}
-  m_LocalEulerAnglesHint: {x: -3.4770002, y: -126.16501, z: -61.558002}
+  m_LocalRotation: {x: 0.5884125, y: -0.6793997, z: -0.2863175, w: 0.33197764}
+  m_LocalPosition: {x: 366.46088, y: 158.66019, z: -207.0738}
+  m_LocalScale: {x: 15.6351185, y: 12.102904, z: 12.1029}
+  m_LocalEulerAnglesHint: {x: 0.09200001, y: -128.266, z: -81.965004}
   m_Children:
   - {fileID: 4000013263251848}
   m_Father: {fileID: 0}
@@ -69,10 +69,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013299550540}
-  m_LocalRotation: {x: -0.004808221, y: 0.10983771, z: 0.011710826, w: 0.9938689}
-  m_LocalPosition: {x: 3.7, y: 0.46, z: -1.2}
-  m_LocalScale: {x: 0.7853716, y: 0.7853716, z: 0.7853716}
-  m_LocalEulerAnglesHint: {x: -0.68700004, y: 12.314, z: 1.2360001}
+  m_LocalRotation: {x: -0.0041892678, y: 0.057715937, z: 0.011946291, w: 0.99825287}
+  m_LocalPosition: {x: 3.002706, y: 0.44000298, z: -0.9923176}
+  m_LocalScale: {x: 0.62779075, y: 0.62779075, z: 0.62779075}
+  m_LocalEulerAnglesHint: {x: -0.55200005, y: 6.4290004, z: 1.3000001}
   m_Children: []
   m_Father: {fileID: 4000010004653936}
   m_RootOrder: 0

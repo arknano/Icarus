@@ -135,8 +135,7 @@ public class GlideController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col)
-    {
-		Debug.Log(scoreKeeper);
+    {    
         if (col.gameObject.tag == "ScoreCollectable")
         {            
             scoreKeeper.AddScore(col);
