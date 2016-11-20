@@ -62,7 +62,7 @@ public class Updraft : MonoBehaviour
 				float tailwind = Vector3.Dot(gc.transform.forward, transform.right) * wind;
 				//gc.acceleration += tailwind * Time.deltaTime * boostPercentage;
 				gc.acceleration += tailwind * Time.deltaTime;
-				Debug.Log(wind);
+				//Debug.Log(wind);
 			}
 			else if(forceApplication == FORCE_APPLICATION.QUICKLY)
 			{
@@ -77,7 +77,7 @@ public class Updraft : MonoBehaviour
 				float tailwind = Vector3.Dot(gc.transform.forward, transform.right) * wind;
 				//gc.acceleration += tailwind * Time.deltaTime * boostPercentage;
 				gc.acceleration += tailwind * Time.deltaTime;
-				Debug.Log(wind);
+				//Debug.Log(wind);
 			}
         }
     }
