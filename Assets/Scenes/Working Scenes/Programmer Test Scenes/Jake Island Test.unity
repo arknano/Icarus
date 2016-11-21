@@ -1516,6 +1516,11 @@ Prefab:
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 500883754}
+    - target: {fileID: 114000010003075198, guid: e0b4277c314ee014b8194cad6c7fa895,
+        type: 2}
+      propertyPath: highScoreText
+      value: 
+      objectReference: {fileID: 2027702986}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0b4277c314ee014b8194cad6c7fa895, type: 2}
   m_IsPrefabParent: 0
@@ -10699,6 +10704,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012790523064, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012790523064, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f032f605aa6f724dab3e4d1fc9f6715, type: 2}
   m_IsPrefabParent: 0
@@ -15123,6 +15136,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd934a52f523c6349b5524196a3b04e5, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2027702986 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012501821434, guid: 2f032f605aa6f724dab3e4d1fc9f6715,
+    type: 2}
+  m_PrefabInternal: {fileID: 1463481603}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!4 &2044953807 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011619372928, guid: d0b1116a76e768b4cb29ba2ad98eda9b,

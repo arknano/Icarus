@@ -11,17 +11,24 @@ public class ScoreKeeping : MonoBehaviour
     private int score;
     private int oldHS;
 
+    private GameObject[] scoreCollectables;
+
     // Use this for initialization
     void Start ()
     {
-	
-	}
+        highScoreText.text = "Best: " + PlayerPrefs.GetInt("HighScore", 0);
+        scoreCollectables = GameObject.FindGameObjectsWithTag("ScoreCollectable");
+        foreach (GameObject g in scoreCollectables)
+        {
+            g.SetActive(true);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-	    
-	}
+        
+    }
 
     public void AddScore(Collider col)
     {
