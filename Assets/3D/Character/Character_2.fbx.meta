@@ -1,15 +1,42 @@
 fileFormatVersion: 2
-guid: 55d61e2d7a66bf44aa921404c93d68a0
-timeCreated: 1479692511
+guid: 2130ce2b701e9374b9f930751dcc4326
+timeCreated: 1479707502
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: kidBody
+    100004: kidEyes
+    100006: kidHat
+    100008: kidHatwings
+    100010: Shoe_L
+    100012: Shoe_R
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: GliderUVd:pCube8
+    400002: kidBody
+    400004: kidEyes
+    400006: kidHat
+    400008: kidHatwings
+    400010: Shoe_L
+    400012: Shoe_R
+    2300000: kidBody
+    2300002: kidEyes
+    2300004: kidHat
+    2300006: kidHatwings
+    2300008: Shoe_L
+    2300010: Shoe_R
+    3300000: kidBody
+    3300002: kidEyes
+    3300004: kidHat
+    3300006: kidHatwings
+    3300008: Shoe_L
+    3300010: Shoe_R
+    4300000: kidBody
+    4300002: kidEyes
+    4300004: kidHat
+    4300006: kidHatwings
+    4300008: Shoe_R
+    4300010: Shoe_L
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -35,7 +62,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
