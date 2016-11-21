@@ -157,6 +157,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatTear (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
@@ -536,6 +540,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatTear (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
@@ -815,6 +823,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatTear (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
@@ -1495,6 +1507,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatTear (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
@@ -1885,6 +1901,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -26.975
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
@@ -2106,6 +2126,10 @@ Prefab:
       propertyPath: m_Name
       value: FloatTear (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07b0b54eca461d49b830a9dfd34740f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a36d81d4ddf10b4f8bcc86e32fddd42, type: 3}
   m_IsPrefabParent: 0
