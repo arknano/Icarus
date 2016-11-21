@@ -11,8 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject player;
     public GameObject newCamera;
 
-    public Sprite fullHealth, twoHealth, oneHealth, noHealth, happyFace, sadFace;
-    public Image Face, Hearts;
+    public Sprite fullHealth, twoHealth, oneHealth, noHealth, happyFace, sadFace, gameOver, winner;
+    public Image Face, Hearts, title;
 
     private GameObject[] gameOverObjects;
     private GameObject[] pausedObjects;
@@ -153,6 +153,15 @@ public class UIManager : MonoBehaviour
     public void EndGame()
     {
         blur.enabled = true;
+        title.sprite = gameOver;
+        ShowGameOver();
+        ShowPaused();
+    }
+
+    public void WinGame()
+    {
+        blur.enabled = true;
+        title.sprite = winner;
         ShowGameOver();
         ShowPaused();
     }
