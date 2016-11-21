@@ -8,12 +8,16 @@ using UnityStandardAssets.ImageEffects;
 public class UIManager : MonoBehaviour
 {
     InputDevice device;
+
     public GameObject player;
     public GameObject newCamera;
 
-    public Sprite fullHealth, twoHealth, oneHealth, noHealth, happyFace, sadFace;
-    public Image Face, Hearts;
+    public string sceneName = "main";
 
+    public Sprite fullHealth, twoHealth, oneHealth, noHealth, happyFace, sadFace, gameOver, winner;
+    public Image Face, Hearts, title;
+
+    private GameObject[] loadingObjects;
     private GameObject[] gameOverObjects;
     private GameObject[] pausedObjects;
     private GameObject[] pausedOnlyObjects;
@@ -27,12 +31,17 @@ public class UIManager : MonoBehaviour
         blur = newCamera.GetComponent<Blur>();
 
         Time.timeScale = 1f;
+        loadingObjects = GameObject.FindGameObjectsWithTag("Load");
         pausedObjects = GameObject.FindGameObjectsWithTag("OnPause");
         gameOverObjects = GameObject.FindGameObjectsWithTag("OnGameOver");
         pausedOnlyObjects = GameObject.FindGameObjectsWithTag("PauseOnly");
         HidePaused();
         HideGameOver();
         HidePausedOnly();
+        foreach (GameObject g in loadingObjects)
+        {
+            g.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -59,7 +68,11 @@ public class UIManager : MonoBehaviour
     public void Reload()
     {
         blur.enabled = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        foreach (GameObject g in loadingObjects)
+        {
+            g.SetActive(true);
+        }
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
 
     public void ShowPaused()
@@ -100,7 +113,12 @@ public class UIManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        blur.enabled = true;
+        foreach (GameObject g in loadingObjects)
+        {
+            g.SetActive(true);
+        }
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
     }
 
     public void QuitGame()
@@ -153,6 +171,15 @@ public class UIManager : MonoBehaviour
     public void EndGame()
     {
         blur.enabled = true;
+        title.sprite = gameOver;
+        ShowGameOver();
+        ShowPaused();
+    }
+
+    public void WinGame()
+    {
+        blur.enabled = true;
+        title.sprite = winner;
         ShowGameOver();
         ShowPaused();
     }
