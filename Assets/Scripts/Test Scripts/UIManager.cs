@@ -38,10 +38,7 @@ public class UIManager : MonoBehaviour
         HidePaused();
         HideGameOver();
         HidePausedOnly();
-        foreach (GameObject g in loadingObjects)
-        {
-            g.SetActive(false);
-        }
+        
     }
 
     // Update is called once per frame
