@@ -16,7 +16,7 @@ public class ScoreKeeping : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        highScoreText.text = "Best: " + PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = "Best: " + PlayerPrefs.GetInt("HighScore", 120);
         scoreCollectables = GameObject.FindGameObjectsWithTag("ScoreCollectable");
         foreach (GameObject g in scoreCollectables)
         {
@@ -36,7 +36,7 @@ public class ScoreKeeping : MonoBehaviour
         score += oI.orbValue;
         scoreText.text = "Score: " + score;
 
-        int oldHS = PlayerPrefs.GetInt("HighScore", 0);
+        int oldHS = PlayerPrefs.GetInt("HighScore", 120);
         if(score > oldHS)
         {
             PlayerPrefs.SetInt("HighScore", score);

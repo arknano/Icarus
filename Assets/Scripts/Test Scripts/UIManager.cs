@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     private GameObject[] pausedOnlyObjects;
     private Blur blur;
     private Health health;
+
+	private TimerScript timer; 
    
     // Use this for initialization
     void Start ()
@@ -38,10 +40,8 @@ public class UIManager : MonoBehaviour
         HidePaused();
         HideGameOver();
         HidePausedOnly();
-        foreach (GameObject g in loadingObjects)
-        {
-            g.SetActive(false);
-        }
+        
+		timer = FindObjectOfType<TimerScript>();
     }
 
     // Update is called once per frame
@@ -180,6 +180,7 @@ public class UIManager : MonoBehaviour
     {
         blur.enabled = true;
         title.sprite = winner;
+		timer.TimeScoreCheck();
         ShowGameOver();
         ShowPaused();
     }
